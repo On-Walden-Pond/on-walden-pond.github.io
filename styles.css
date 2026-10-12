@@ -1,0 +1,236 @@
+/* On Walden Pond — calm, editorial. Palette: pine / cream / gold. */
+
+:root {
+  --pine: #2f4034;
+  --pine-deep: #243128;
+  --cream: #f7f4ec;
+  --paper: #fffdf8;
+  --gold: #b08d57;
+  --ink: #33362f;
+  --muted: #6d7267;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem clamp(1rem, 4vw, 3rem);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid color-mix(in srgb, var(--pine) 10%, transparent);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--pine);
+  text-decoration: none;
+}
+
+.site-header nav { display: flex; align-items: center; gap: clamp(0.8rem, 2.5vw, 1.8rem); }
+
+.site-header nav a {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-header nav a:hover { color: var(--pine); }
+
+.nav-cta {
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  padding: 0.45rem 0.9rem;
+  border-radius: 2px;
+}
+
+.nav-cta:hover { background: var(--gold); color: var(--paper) !important; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  min-height: 88vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--cream);
+  /* TODO: replace gradient with a real hero photo:
+     background: linear-gradient(rgba(36,49,40,.45), rgba(36,49,40,.55)), url("images/hero.jpg") center/cover; */
+  background:
+    radial-gradient(120% 90% at 50% 110%, rgba(176,141,87,0.35), transparent 55%),
+    radial-gradient(90% 70% at 20% 0%, rgba(247,244,236,0.10), transparent 60%),
+    linear-gradient(170deg, var(--pine-deep) 0%, var(--pine) 55%, #3a5040 100%);
+}
+
+.hero-inner { padding: 4rem 1.5rem; max-width: 46rem; }
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  color: color-mix(in srgb, var(--cream) 85%, transparent);
+}
+
+/* ---------- buttons ---------- */
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.4rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-primary { background: var(--gold); color: var(--paper); }
+.btn-primary:hover { background: #9a7a49; }
+
+.btn-ghost { border: 1px solid color-mix(in srgb, var(--cream) 60%, transparent); color: var(--cream); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--cream) 14%, transparent); }
+
+#book .btn-ghost { border-color: color-mix(in srgb, var(--pine) 40%, transparent); color: var(--pine); }
+#book .btn-ghost:hover { background: color-mix(in srgb, var(--pine) 8%, transparent); }
+
+/* ---------- sections ---------- */
+
+.section { padding: clamp(4rem, 9vw, 7rem) clamp(1.25rem, 5vw, 3rem); }
+.section.alt { background: var(--cream); }
+
+.section-inner { max-width: 60rem; margin: 0 auto; }
+.section-inner.narrow { max-width: 42rem; }
+.section-inner.center { text-align: center; }
+
+.section h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+  color: var(--pine);
+  margin-bottom: 1.4rem;
+}
+
+.lede { font-size: 1.12rem; color: var(--ink); margin-bottom: 1rem; }
+.section p + p { margin-top: 1rem; color: var(--muted); }
+
+/* ---------- cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--pine) 12%, transparent);
+  border-radius: 4px;
+  padding: 2rem 1.6rem;
+}
+
+.card h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--pine);
+  margin-bottom: 0.6rem;
+}
+
+.card p { font-size: 0.95rem; color: var(--muted); }
+
+/* ---------- gallery placeholders ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.tile { aspect-ratio: 4 / 3; border-radius: 4px; }
+.t1 { background: linear-gradient(140deg, #3a5040, #6a7f68); }
+.t2 { background: linear-gradient(140deg, #b08d57, #d8c39a); }
+.t3 { background: linear-gradient(140deg, #2f4034, #4c6450); }
+.t4 { background: linear-gradient(140deg, #8a9a86, #cbd4c2); }
+.t5 { background: linear-gradient(140deg, #5c6b52, #97a688); }
+.t6 { background: linear-gradient(140deg, #c8b18a, #efe5cd); }
+
+/* ---------- visit / footer ---------- */
+
+address {
+  font-style: normal;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+#visit a { color: var(--gold); text-decoration: none; letter-spacing: 0.05em; }
+#visit a:hover { text-decoration: underline; }
+
+footer {
+  text-align: center;
+  padding: 2.6rem 1.5rem;
+  background: var(--pine-deep);
+  color: color-mix(in srgb, var(--cream) 75%, transparent);
+  font-size: 0.85rem;
+}
+
+footer .fine { margin-top: 0.4rem; font-size: 0.75rem; opacity: 0.7; }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 640px) {
+  .site-header nav a:not(.nav-cta) { display: none; }
+  .hero { min-height: 78vh; }
+}

@@ -175,8 +175,17 @@ body {
   background: var(--paper);
   border: 1px solid color-mix(in srgb, var(--pine) 12%, transparent);
   border-radius: 4px;
-  padding: 2rem 1.6rem;
+  overflow: hidden;
 }
+
+.card > img {
+  display: block;
+  width: 100%;
+  height: 10.5rem;
+  object-fit: cover;
+}
+
+.card-body { padding: 1.6rem; }
 
 .card h3 {
   font-family: var(--serif);
@@ -199,6 +208,27 @@ body {
 
 .tile { aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden; }
 .tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.gallery-more { margin-top: 1.8rem; text-align: center; }
+.gallery-more a { color: var(--gold); text-decoration: none; letter-spacing: 0.05em; }
+.gallery-more a:hover { text-decoration: underline; }
+
+/* ---------- photos page ---------- */
+
+.album-section { padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
+.album-section.alt { background: var(--cream); }
+.album-section .section-inner { max-width: 72rem; margin: 0 auto; }
+.album-section h2 { margin-bottom: 0.4rem; }
+.album-section .album-note { color: var(--muted); margin-bottom: 1.4rem; }
+
+.album-grid { columns: 220px; column-gap: 0.7rem; }
+.album-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.7rem;
+  border-radius: 4px;
+}
 
 /* ---------- visit / footer ---------- */
 

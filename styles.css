@@ -80,11 +80,10 @@ body {
   place-items: center;
   text-align: center;
   color: var(--cream);
-  /* TODO: replace gradient with a real hero photo:
-     background: linear-gradient(rgba(36,49,40,.45), rgba(36,49,40,.55)), url("images/hero.jpg") center/cover; */
   background:
+    linear-gradient(rgba(36,49,40,0.38), rgba(36,49,40,0.58)),
+    url("images/hero/hero-bridge-dusk.jpg") center / cover no-repeat,
     radial-gradient(120% 90% at 50% 110%, rgba(176,141,87,0.35), transparent 55%),
-    radial-gradient(90% 70% at 20% 0%, rgba(247,244,236,0.10), transparent 60%),
     linear-gradient(170deg, var(--pine-deep) 0%, var(--pine) 55%, #3a5040 100%);
 }
 
@@ -198,13 +197,8 @@ body {
   margin-top: 2.2rem;
 }
 
-.tile { aspect-ratio: 4 / 3; border-radius: 4px; }
-.t1 { background: linear-gradient(140deg, #3a5040, #6a7f68); }
-.t2 { background: linear-gradient(140deg, #b08d57, #d8c39a); }
-.t3 { background: linear-gradient(140deg, #2f4034, #4c6450); }
-.t4 { background: linear-gradient(140deg, #8a9a86, #cbd4c2); }
-.t5 { background: linear-gradient(140deg, #5c6b52, #97a688); }
-.t6 { background: linear-gradient(140deg, #c8b18a, #efe5cd); }
+.tile { aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden; }
+.tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- visit / footer ---------- */
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>On Walden Pond — Weddings &amp; Celebrations | Calhoun, Georgia</title>
-  <meta name="description" content="On Walden Pond is a family-owned wedding and event venue in Calhoun, Georgia — pond, lantern bridge, and pine grove. Private ceremonies, receptions, and gatherings by the water. Check your date or request a tour.">
+  <meta name="description" content="On Walden Pond is a family-owned wedding and event venue in Calhoun, Georgia — pond, lantern bridge, and pine grove. One celebration a day, an hour from Atlanta. Check your date or request a tour.">
   <meta property="og:site_name" content="On Walden Pond">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://on-walden-pond.github.io/">
@@ -12,157 +12,142 @@
   <meta property="og:description" content="A family-owned wedding &amp; event venue in Calhoun, Georgia — pond, lantern bridge, pine grove. One celebration a day, an hour from Atlanta.">
   <meta property="og:image" content="https://on-walden-pond.github.io/images/hero/hero-bridge-dusk.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232f4034'/%3E%3Cpath d='M14 38c6-4 10 4 16 0s10 4 16 0' stroke='%23f7f4ec' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M14 46c6-4 10 4 16 0s10 4 16 0' stroke='%23b08d57' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M32 12c6 6 6 14 0 20-6-6-6-14 0-20z' fill='%23f7f4ec'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232f4034'/%3E%3Cpath d='M14 38c6-4 10 4 16 0s10 4 16 0' stroke='%23f7f4ec' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M14 46c6-4 10 4 16 0s10 4 16 0' stroke='%23b08d57' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M32 12c6 6 6 14 0 20-6-6-6-14 0-20z' fill='%23f7f4ec'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #f5f3ee; --dim: rgba(245,243,238,0.65); --accent: #e0b06a; --bg: #101211; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Sora, sans-serif; font-weight: 300; background: var(--bg); color: var(--ink); line-height: 1.75; }
+    img { display: block; max-width: 100%; }
+    .lbl { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--accent); }
+
+    .bar { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 1.3rem clamp(1.25rem, 4vw, 3rem); background: linear-gradient(rgba(16,18,17,0.55), transparent); }
+    .brand { font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
+    nav { display: flex; gap: 1.6rem; }
+    nav a { color: var(--dim); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+    nav a:hover { color: var(--ink); }
+
+    .stage { position: relative; height: 100vh; min-height: 560px; overflow: hidden; }
+    .slide { position: absolute; inset: 0; opacity: 0; animation: mix 24s infinite; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; }
+    .slide:nth-child(1) { animation-delay: 0s; }
+    .slide:nth-child(2) { animation-delay: 6s; }
+    .slide:nth-child(3) { animation-delay: 12s; }
+    .slide:nth-child(4) { animation-delay: 18s; }
+    @keyframes mix { 0% { opacity: 0; } 4% { opacity: 1; } 25% { opacity: 1; } 32% { opacity: 0; } 100% { opacity: 0; } }
+    .stage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,18,17,0.88), rgba(16,18,17,0.12) 55%); }
+    .stage-txt { position: absolute; left: clamp(1.5rem, 6vw, 5rem); bottom: clamp(3rem, 9vh, 6rem); right: 1.5rem; z-index: 5; }
+    h1 { font-weight: 200; font-size: clamp(2.4rem, 6.5vw, 4.8rem); line-height: 1.06; letter-spacing: -0.01em; max-width: 16ch; }
+    .stage-txt p { margin-top: 1rem; color: var(--dim); max-width: 34rem; }
+    .btn { display: inline-block; margin-top: 1.8rem; margin-right: 0.8rem; padding: 0.95rem 2rem; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border-radius: 999px; }
+    .btn-solid { background: var(--accent); color: #14130f; }
+    .btn-solid:hover { background: #f0c17c; }
+    .btn-line { border: 1px solid rgba(245,243,238,0.4); color: var(--ink); }
+    .btn-line:hover { border-color: var(--ink); }
+
+    section { padding: clamp(3.5rem, 9vw, 6rem) clamp(1.25rem, 5vw, 3rem); max-width: 80rem; margin: 0 auto; }
+    h2 { font-weight: 300; font-size: clamp(1.6rem, 4vw, 2.5rem); margin: 0.8rem 0 2rem; letter-spacing: -0.01em; }
+    .rowline { border-top: 1px solid rgba(245,243,238,0.14); }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .cards figure { position: relative; overflow: hidden; border-radius: 10px; }
+    .cards img { aspect-ratio: 3/4; object-fit: cover; transition: transform 0.5s; }
+    .cards figure:hover img { transform: scale(1.05); }
+    .cards figcaption { position: absolute; inset: auto 0 0 0; padding: 2.6rem 1.2rem 1.1rem; background: linear-gradient(transparent, rgba(16,18,17,0.9)); font-size: 0.9rem; font-weight: 400; }
+    .cards figcaption small { display: block; color: var(--dim); font-weight: 300; font-size: 0.78rem; }
+
+    .filmstrip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+    .filmstrip img { aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+
+    .more { text-align: center; margin-top: 2.4rem; }
+    .more .btn { margin-top: 0; }
+
+    .marq { overflow: hidden; white-space: nowrap; border-block: 1px solid rgba(245,243,238,0.14); padding: 1rem 0; font-weight: 200; font-size: 1.1rem; color: var(--dim); }
+    .marq div { display: inline-block; animation: slide 28s linear infinite; }
+    .marq span { margin: 0 2.2rem; }
+    .marq b { color: var(--accent); font-weight: 400; }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .book { text-align: center; }
+    address { margin-top: 2rem; color: var(--dim); font-style: normal; font-size: 0.85rem; line-height: 2; }
+    address a { color: var(--accent); text-decoration: none; }
+    footer { text-align: center; padding: 1.6rem; font-size: 0.7rem; letter-spacing: 0.16em; color: var(--dim); border-top: 1px solid rgba(245,243,238,0.14); }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 820px) { .cards, .filmstrip { grid-template-columns: 1fr 1fr; } nav a:not(:last-child) { display: none; } }
+  </style>
 </head>
 <body>
-
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="On Walden Pond home">
-      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="currentColor" opacity="0.12"/>
-        <path d="M14 38c6-4 10 4 16 0s10 4 16 0" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M14 46c6-4 10 4 16 0s10 4 16 0" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
-        <path d="M32 12c6 6 6 14 0 20-6-6-6-14 0-20z" fill="currentColor"/>
-      </svg>
-      <span>On Walden Pond</span>
-    </a>
-    <nav aria-label="Main">
-      <a href="#venue">The Venue</a>
-      <a href="#space">The Space</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#book" class="nav-cta">Check Your Date</a>
+  <div class="bar">
+    <a class="brand" href="#top">On Walden Pond</a>
+    <nav>
+      <a href="photos.html">Photos</a>
+      <a href="#spaces">Spaces</a>
+      <a href="#book">Dates</a>
     </nav>
-  </header>
+  </div>
 
-  <main id="top">
+  <div class="stage" id="top">
+    <div class="slide"><img src="images/hero/hero-bridge-dusk.jpg" alt="The lantern bridge at dusk"></div>
+    <div class="slide"><img src="images/venue/pond-fountain.jpg" alt="The pond and fountain"></div>
+    <div class="slide"><img src="images/ceremonies/pavilion-first-kiss.jpg" alt="A first kiss in the pavilion"></div>
+    <div class="slide"><img src="images/venue/firepit-grove.jpg" alt="The fire pit grove at dusk"></div>
+    <div class="stage-txt">
+      <p class="lbl">Calhoun, Georgia</p>
+      <h1>Four frames of the same quiet place.</h1>
+      <p>A family-owned pond venue — bridge, dock, table, fire — an hour from Atlanta. One celebration a day.</p>
+      <a class="btn btn-solid" href="#book">Check Your Date</a>
+      <a class="btn btn-line" href="#spaces">See the Spaces</a>
+    </div>
+  </div>
 
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Calhoun, Georgia</p>
-        <h1>On Walden&nbsp;Pond</h1>
-        <p class="tagline">Weddings &amp; celebrations, held quietly by the water.</p>
-        <div class="hero-actions">
-          <!-- TODO: point this at the booking calendar once Google Calendar is set up -->
-          <a class="btn btn-primary" href="#book">Check Your Date</a>
-          <a class="btn btn-ghost" href="#venue">Visit the Venue</a>
-        </div>
-      </div>
-    </section>
+  <section id="spaces">
+    <p class="lbl">The Spaces</p>
+    <h2>Bridge. Dock. Fire.</h2>
+    <div class="cards">
+      <figure><img src="images/venue/ceremony-bridge-day.jpg" alt="The ceremony bridge" loading="lazy"><figcaption>The Ceremony Bridge<small>vows at golden hour</small></figcaption></figure>
+      <figure><img src="images/venue/pond-dock.jpg" alt="The pond docks" loading="lazy"><figcaption>The Pond &amp; Dock<small>portraits on weathered wood</small></figcaption></figure>
+      <figure><img src="images/venue/firepit-grove.jpg" alt="The fire pit grove" loading="lazy"><figcaption>The Fire Pit Grove<small>the long way home</small></figcaption></figure>
+    </div>
+  </section>
 
-    <section id="venue" class="section">
-      <div class="section-inner narrow">
-        <p class="eyebrow">The Venue</p>
-        <h2>A private setting, an hour from Atlanta</h2>
-        <p class="lede">
-          On Walden Pond is a family-run wedding and event venue on the quiet edge of
-          Calhoun, Georgia — pines, still water, and a lighted bridge over the pond,
-          kept simple so your day can be the focus.
-        </p>
-        <p>
-          <!-- TODO: confirm the full sentence ending — Facebook shows it truncated -->
-          Family owned and operated, we host events for groups both small and large —
-          from baby showers and retirement parties to birthdays, engagements, and
-          weddings. We take the time to know the families we work with, because a
-          celebration should feel like it belongs to you.
-        </p>
-      </div>
-    </section>
+  <div class="marq"><div>
+    <span>Weddings</span><b>◆</b><span>Elopements</span><b>◆</b><span>Receptions</span><b>◆</b><span>Anniversaries</span><b>◆</b><span>Birthdays</span><b>◆</b><span>Showers</span><b>◆</b><span>Reunions</span><b>◆</b>
+    <span>Weddings</span><b>◆</b><span>Elopements</span><b>◆</b><span>Receptions</span><b>◆</b><span>Anniversaries</span><b>◆</b><span>Birthdays</span><b>◆</b><span>Showers</span><b>◆</b><span>Reunions</span><b>◆</b>
+  </div></div>
 
-    <section id="space" class="section alt">
-      <div class="section-inner">
-        <p class="eyebrow">The Space</p>
-        <h2>Room for the whole day</h2>
-        <div class="cards">
-          <!-- TODO: confirm these space names with the family -->
-          <article class="card">
-            <img src="images/venue/ceremony-bridge-day.jpg" alt="The lantern bridge leading to the lighted gazebo on the pond" loading="lazy">
-            <div class="card-body">
-              <h3>The Ceremony Bridge</h3>
-              <p>A lantern-lined footbridge to a lighted gazebo on the water — vows at golden hour, fountain glowing behind you.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="images/venue/pond-dock.jpg" alt="Weathered dock reaching into the still pond" loading="lazy">
-            <div class="card-body">
-              <h3>The Pond &amp; Dock</h3>
-              <p>Weathered docks and open water for the portraits everyone actually keeps — and a quiet bank for an intimate ceremony.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="images/venue/firepit-grove.jpg" alt="Stone fire pit and benches beside the cabin at dusk" loading="lazy">
-            <div class="card-body">
-              <h3>The Fire Pit Grove</h3>
-              <p>A stone fire pit and benches under old oaks beside the cabin — where the evening winds down.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+  <section class="book rowline" style="text-align:center">
+    <p class="lbl">The Promise of One</p>
+    <h2>One celebration a day. The whole property, yours.</h2>
+    <p style="color:var(--dim);max-width:34rem;margin:0 auto">Calhoun, Georgia — an hour from Atlanta · owned and hosted by the family who owns it · tours by appointment · elopements &amp; portrait sessions by the hour.</p>
+    <div><a class="btn btn-line" href="mailto:onwaldenpondga@gmail.com?subject=Wedding%20Tour%20Request">Book a Tour</a></div>
+  </section>
 
-    <section id="gallery" class="section">
-      <div class="section-inner">
-        <p class="eyebrow">Gallery</p>
-        <h2>A look around the property</h2>
-        <div class="gallery">
-          <div class="tile"><img src="images/venue/pond-fountain.jpg" alt="Fountain on the pond at first light" loading="lazy"></div>
-          <div class="tile"><img src="images/ceremonies/pavilion-first-kiss.jpg" alt="First kiss in the pavilion before the guests" loading="lazy"></div>
-          <div class="tile"><img src="images/venue/gazebo-fountain-view.jpg" alt="The fountain seen from the gazebo on the bridge" loading="lazy"></div>
-          <div class="tile"><img src="images/ceremonies/dock-kiss-fountain.jpg" alt="Newlyweds on the dock with the fountain behind them" loading="lazy"></div>
-          <div class="tile"><img src="images/reception/banquet-table.jpg" alt="Long dinner table dressed with greenery" loading="lazy"></div>
-          <div class="tile"><img src="images/portraits/bride-dock.jpg" alt="Bride on the dock above the pond" loading="lazy"></div>
-          <div class="tile"><img src="images/venue/pond-bench.jpg" alt="Quiet bench in the shade by the water" loading="lazy"></div>
-          <div class="tile"><img src="images/reception/fireplace-gathering.jpg" alt="Evening by the pavilion's stone fireplace" loading="lazy"></div>
-          <div class="tile"><img src="images/ceremonies/tunnel-cheers.jpg" alt="Guests cheering the newlyweds through a tunnel of glasses" loading="lazy"></div>
-        </div>
-        <p class="gallery-more"><a href="photos.html">See all the photos from the family albums →</a></p>
-      </div>
-    </section>
+  <section>
+    <p class="lbl">The Day, in Frames</p>
+    <h2>Getting ready → send-off.</h2>
+    <div class="filmstrip">
+      <img src="images/portraits/getting-ready.jpg" alt="Getting ready" loading="lazy">
+      <img src="images/ceremonies/pavilion-first-kiss.jpg" alt="The first kiss" loading="lazy">
+      <img src="images/reception/banquet-table.jpg" alt="The dinner table" loading="lazy">
+      <img src="images/ceremonies/tunnel-cheers.jpg" alt="The send-off" loading="lazy">
+    </div>
+    <div class="more"><a class="btn btn-line" href="photos.html">See all 98 photos from the family albums</a></div>
+  </section>
 
-    <section id="book" class="section alt">
-      <div class="section-inner narrow center">
-        <p class="eyebrow">Bookings &amp; Tours</p>
-        <h2>Check your date</h2>
-        <p class="lede">
-          Call or write and tell us your date and the shape of your day — we'll answer
-          within two business days.
-        </p>
-        <div class="hero-actions">
-          <!-- TODO: swap the mailto for the Google Calendar appointment-schedule link once created;
-               later, hello@onwaldenpond.com replaces this address -->
-          <a class="btn btn-primary" href="mailto:onwaldenpondga@gmail.com?subject=Wedding%20inquiry%20%E2%80%94%20On%20Walden%20Pond">Email Us</a>
-          <a class="btn btn-ghost" href="tel:+17706537007">Call (770)&nbsp;653-7007</a>
-        </div>
-      </div>
-    </section>
+  <section class="book rowline" id="book">
+    <p class="lbl">2026 — 2027</p>
+    <h2 style="margin-bottom:0.6rem">Tell us your date.</h2>
+    <p style="color:var(--dim);max-width:30rem;margin:0 auto">We answer within two business days — same phone, same family, every time.</p>
+    <div>
+      <a class="btn btn-solid" href="mailto:onwaldenpondga@gmail.com">Email Us</a>
+      <a class="btn btn-line" href="tel:+17706537007">(770) 653-7007</a>
+    </div>
+    <address>On Walden Pond · 565 Owens Gin Road NE, Calhoun, GA 30701<br><a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a></address>
+  </section>
 
-    <section id="visit" class="section">
-      <div class="section-inner narrow center">
-        <p class="eyebrow">Visit</p>
-        <h2>Find us</h2>
-        <address>
-          On Walden Pond<br>
-          565 Owens Gin Road NE<br>
-          Calhoun, GA 30701<br>
-          <a href="tel:+17706537007">(770) 653-7007</a><br>
-          <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a>
-        </address>
-        <p>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=565+Owens+Gin+Road+NE+Calhoun+GA+30701">
-            Open in Google Maps →</a>
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 On Walden Pond · Calhoun, Georgia</p>
-    <p class="fine">Weddings &amp; celebrations by appointment.</p>
-  </footer>
-
+  <footer>© 2026 On Walden Pond · One celebration at a time · <a href="photos.html">all photos</a> · <a href="templates/">design archive</a></footer>
 </body>
 </html>

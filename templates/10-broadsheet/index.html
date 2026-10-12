@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 10 — The Broadsheet | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 10: The Broadsheet, an editorial newspaper layout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --news: #f4f1e8; --ink: #191813; --soft: #55524a; --rule: #191813; --hair: #b9b4a4; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Libre Baskerville", Georgia, serif; background: var(--news); color: var(--ink); line-height: 1.85; font-size: 1rem; }
+    img { display: block; width: 100%; }
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+
+    nav { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 3px double var(--rule); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; }
+    nav a { color: var(--ink); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+
+    .masthead { text-align: center; padding: 2.2rem 0 1.2rem; border-bottom: 1px solid var(--rule); }
+    .masthead .kick { font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; }
+    h1.mast { font-family: "Playfair Display", serif; font-weight: 900; font-size: clamp(2.6rem, 9vw, 6rem); letter-spacing: -0.01em; line-height: 1; margin: 0.6rem 0; }
+    .dateline { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; border-block: 1px solid var(--hair); padding: 0.5rem 0; margin-top: 1rem; }
+
+    .lede-headline { text-align: center; padding: 2.4rem 0 1.4rem; }
+    .lede-headline h2 { font-family: "Playfair Display", serif; font-weight: 900; font-size: clamp(1.9rem, 5.5vw, 3.4rem); line-height: 1.1; max-width: 24ch; margin: 0 auto; }
+    .lede-headline p.sub { font-style: italic; color: var(--soft); max-width: 44rem; margin: 1rem auto 0; font-size: 1.05rem; }
+    .byline { text-align: center; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 1.2rem; }
+
+    .cols { columns: 2; column-gap: 2.6rem; column-rule: 1px solid var(--hair); padding: 1rem 0 2.4rem; }
+    .cols p { margin-bottom: 1.1rem; text-align: justify; hyphens: auto; }
+    .cols p:first-of-type::first-letter { font-family: "Playfair Display", serif; font-weight: 900; font-size: 4.6em; float: left; line-height: 0.82; padding: 0.06em 0.12em 0 0; }
+    figure { break-inside: avoid; margin: 1.2rem 0; border: 1px solid var(--hair); padding: 8px; background: #fffdf6; }
+    figure img { aspect-ratio: 16/9; object-fit: cover; }
+    figcaption { font-size: 0.78rem; font-style: italic; color: var(--soft); padding-top: 0.6rem; }
+
+    section { border-top: 3px double var(--rule); padding: 2.2rem 0; }
+    .sec-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    h2.sect { font-family: "Playfair Display", serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 1.2rem; }
+
+    .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .three figure { margin: 0; }
+    .three img { aspect-ratio: 4/5; }
+    .three h3 { font-family: "Playfair Display", serif; font-size: 1.15rem; margin: 0.8rem 0 0.4rem; }
+    .three p { font-size: 0.88rem; color: var(--soft); }
+
+    .pull { border-block: 1px solid var(--rule); text-align: center; padding: 2.6rem 1rem; }
+    .pull p { font-family: "Playfair Display", serif; font-style: italic; font-size: clamp(1.3rem, 3.2vw, 1.9rem); max-width: 40ch; margin: 0 auto; line-height: 1.5; }
+    .pull small { display: block; margin-top: 1rem; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; }
+
+    .classif { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.4rem; align-items: center; }
+    .ad { border: 2px solid var(--rule); padding: clamp(1.6rem, 4vw, 2.8rem); text-align: center; background: #fffdf6; }
+    .ad h3 { font-family: "Playfair Display", serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.3rem); margin-bottom: 0.6rem; }
+    .ad p { font-size: 0.95rem; color: var(--soft); }
+    .ad .btn { display: inline-block; margin: 1.2rem 0.3rem 0.2rem; padding: 0.85rem 1.6rem; background: var(--ink); color: var(--news); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; }
+    .ad .btn:hover { background: #3d3a2f; }
+    .ad .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+    table.glance { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    table.glance caption { font-family: "Playfair Display", serif; font-weight: 700; text-align: left; font-size: 1.15rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); }
+    table.glance td { border-bottom: 1px dotted var(--hair); padding: 0.55rem 0.2rem; }
+    table.glance td:last-child { text-align: right; font-style: italic; }
+
+    .colophon { border-top: 3px double var(--rule); padding: 1.4rem 0 2.4rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.75rem; color: var(--soft); }
+    .colophon a { color: var(--ink); }
+    @media (max-width: 780px) { .cols { columns: 1; } .three, .classif { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="../">← All Templates</a>
+      <span>Vol. I · No. 12 — The Weddings &amp; Celebrations Edition</span>
+      <a href="#classifieds">Classifieds</a>
+    </nav>
+
+    <header class="masthead">
+      <p class="kick">Established Among the Pines</p>
+      <h1 class="mast">The Walden Broadsheet</h1>
+      <p class="kick">On Walden Pond · Calhoun, Georgia · An Hour from Atlanta</p>
+      <div class="dateline">
+        <span>Family-Owned &amp; Operated</span>
+        <span>One Celebration Per Day</span>
+        <span>Ceremonies · Receptions · Birthdays</span>
+      </div>
+    </header>
+
+    <div class="lede-headline">
+      <h2>Local Family Keeps a Pond, a Bridge, and Room for Your Biggest Day</h2>
+      <p class="sub">The lanterns go on at dusk. The fountain runs. The guest list is yours alone — at Walden Pond, nothing is shared but the scenery.</p>
+      <p class="byline">Reported by the family · Photographs from the family albums</p>
+    </div>
+
+    <div class="cols">
+      <figure>
+        <img src="../../images/hero/hero-bridge-dusk.jpg" alt="The lantern bridge at dusk">
+        <figcaption>Fig. 1 — The footbridge and gazebo at twilight, the venue's best-known view.</figcaption>
+      </figure>
+      <p>On the quiet edge of Calhoun, Georgia, a family has spent years tending what most venues only advertise: an actual pond, with an actual lighted bridge across it, and weathered docks that have appeared in more wedding portraits than any studio backdrop.</p>
+      <p>What began as the family's own place for gatherings — birthdays on the bank, rehearsals under the oaks — is now booked, one celebration at a time, by families who want the same for themselves. Weddings and elopements take the bridge at golden hour; dinners take the long tables; the fire pit takes the rest of the night.</p>
+      <p>The arrangements are deliberately simple. There is one date, the whole property, and the people who own it on hand to light the lanterns. There are no other crowds, and no other photographers fighting for the same sunset.</p>
+    </div>
+
+    <section>
+      <p class="sec-tag">Page Two — The Grounds</p>
+      <h2 class="sect">Three Settings, Described As They Are</h2>
+      <div class="three">
+        <figure>
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The ceremony bridge" loading="lazy">
+          <h3>The Bridge</h3>
+          <p>A lantern-lined footbridge to a lighted gazebo; the fountain sits behind the couple. Ceremony or portraits, mornings to last light.</p>
+        </figure>
+        <figure>
+          <img src="../../images/venue/pond-dock.jpg" alt="The docks" loading="lazy">
+          <h3>The Pond &amp; Docks</h3>
+          <p>Open water and weathered wood — the setting for the photographs families actually frame.</p>
+        </figure>
+        <figure>
+          <img src="../../images/venue/firepit-grove.jpg" alt="The fire pit grove" loading="lazy">
+          <h3>The Fire Pit Grove</h3>
+          <p>Stone pit, benches, old oaks, and the cabin's warm windows; where evenings are wound down slowly.</p>
+        </figure>
+      </div>
+    </section>
+
+    <div class="pull">
+      <p>“We got married on the bridge as the lanterns came on. It is the only photo we frame in our living room.”</p>
+      <small>Sample testimonial — to be replaced with the real article</small>
+    </div>
+
+    <section>
+      <p class="sec-tag">Page Three — The Day Itself</p>
+      <h2 class="sect">From Veil to Send-Off, In Five Pictures</h2>
+      <div class="cols" style="padding-top:0">
+        <figure>
+          <img src="../../images/portraits/getting-ready.jpg" alt="Getting ready by the window" loading="lazy">
+          <figcaption>Fig. 2 — Morning, by the window.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../images/ceremonies/tunnel-cheers.jpg" alt="The send-off" loading="lazy">
+          <figcaption>Fig. 3 — The send-off, glasses raised.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../images/reception/banquet-table.jpg" alt="The dinner table" loading="lazy">
+          <figcaption>Fig. 4 — Dinner beneath the oaks.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../images/ceremonies/dock-kiss-fountain.jpg" alt="The newlyweds on the dock" loading="lazy">
+          <figcaption>Fig. 5 — The dock, fountain running, the end of the ceremony.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="classifieds" class="classif">
+      <div class="ad">
+        <h3>WANTED: One Date, Yours</h3>
+        <p>Calendars for 2026 &amp; 2027 now open. Tell the family your date and the shape of your day; a real person replies within two business days.</p>
+        <a class="btn" href="mailto:onwaldenpondga@gmail.com">Write to Us</a>
+        <a class="btn ghost" href="tel:+17706537007">(770) 653-7007</a>
+      </div>
+      <table class="glance">
+        <caption>At a Glance</caption>
+        <tr><td>Address</td><td>565 Owens Gin Rd NE, Calhoun</td></tr>
+        <tr><td>Known for</td><td>the bridge at dusk</td></tr>
+        <tr><td>Best for</td><td>weddings · anniversaries · birthdays</td></tr>
+        <tr><td>Policy</td><td>one party per day</td></tr>
+        <tr><td>Distance</td><td>1 hr from Atlanta</td></tr>
+      </table>
+    </section>
+
+    <div class="colophon">
+      <span>© 2026 The On Walden Pond Broadsheet · <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a></span>
+      <span>Template 10 — The Broadsheet · <a href="../">all templates</a></span>
+    </div>
+  </div>
+</body>
+</html>

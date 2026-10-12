@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 01 — Walden Classic | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding and event venue in Calhoun, Georgia. Template design 01: Walden Classic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pine: #2f4034; --pine-deep: #243128; --cream: #f7f4ec; --paper: #fffdf8;
+      --gold: #b08d57; --ink: #33362f; --muted: #6d7267;
+      --serif: "Cormorant Garamond", Georgia, serif; --sans: "Inter", sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-weight: 300; color: var(--ink); background: var(--paper); line-height: 1.75; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: 74rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+
+    .topbar { background: var(--pine-deep); color: color-mix(in srgb, var(--cream) 80%, transparent); text-align: center; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.55rem 1rem; }
+    .tplnote { float: left; }
+    .tplnote a { color: var(--gold); text-decoration: none; }
+
+    header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid color-mix(in srgb, var(--pine) 10%, transparent); }
+    .head-in { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem clamp(1.25rem, 5vw, 3rem); }
+    .brand { font-family: var(--serif); font-size: 1.3rem; color: var(--pine); text-decoration: none; letter-spacing: 0.02em; }
+    nav { display: flex; gap: 1.6rem; align-items: center; }
+    nav a { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    nav a.cta { border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1rem; border-radius: 2px; }
+    nav a.cta:hover { background: var(--gold); color: var(--paper); }
+
+    .hero { min-height: 84vh; display: grid; place-items: center; text-align: center; color: var(--cream);
+      background: linear-gradient(rgba(36,49,40,0.35), rgba(36,49,40,0.6)), url("../../images/hero/hero-bridge-dusk.jpg") center / cover no-repeat, var(--pine-deep); }
+    .hero-inner { padding: 4rem 1.5rem; max-width: 46rem; }
+    .eyebrow { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(3rem, 9vw, 5.4rem); line-height: 1.05; margin-bottom: 1rem; }
+    .tagline { font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 2.5vw, 1.45rem); color: color-mix(in srgb, var(--cream) 88%, transparent); }
+    .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.3rem; }
+    .btn { display: inline-block; padding: 0.85rem 1.8rem; font-size: 0.76rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; }
+    .btn-gold { background: var(--gold); color: var(--paper); }
+    .btn-gold:hover { background: #9a7a49; }
+    .btn-ghost { border: 1px solid color-mix(in srgb, var(--cream) 60%, transparent); color: var(--cream); }
+    .btn-ghost:hover { background: color-mix(in srgb, var(--cream) 15%, transparent); }
+
+    .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: -3.2rem auto 0; position: relative; z-index: 2; }
+    .strip div { background: var(--paper); border: 1px solid color-mix(in srgb, var(--pine) 12%, transparent); border-radius: 3px; padding: 1.4rem 1.2rem; text-align: center; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pine); }
+
+    section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+    .alt { background: var(--cream); }
+    h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 4.5vw, 2.7rem); color: var(--pine); margin-bottom: 1.3rem; }
+    .muted { color: var(--muted); }
+    .lede { font-size: 1.1rem; }
+
+    .two { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .two img { border-radius: 4px; aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.3rem; margin-top: 2.4rem; }
+    .card { background: var(--paper); border: 1px solid color-mix(in srgb, var(--pine) 12%, transparent); border-radius: 4px; overflow: hidden; }
+    .card img { width: 100%; height: 11rem; object-fit: cover; }
+    .card .b { padding: 1.5rem; }
+    .card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; color: var(--pine); margin-bottom: 0.5rem; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
+
+    .banner { position: relative; color: var(--cream); background: linear-gradient(rgba(36,49,40,0.5), rgba(36,49,40,0.55)), url("../../images/ceremonies/dock-kiss-fountain.jpg") center / cover no-repeat, var(--pine); padding: clamp(4rem, 10vw, 8rem) 0; text-align: center; }
+    .banner blockquote { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 3.2vw, 2rem); max-width: 44rem; margin: 0 auto; line-height: 1.5; }
+    .banner cite { display: block; margin-top: 1.1rem; font-style: normal; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: color-mix(in srgb, var(--cream) 75%, transparent); }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.85rem; margin-top: 2.2rem; }
+    .gallery img { aspect-ratio: 4/3; width: 100%; object-fit: cover; border-radius: 3px; }
+
+    .book { background: var(--pine-deep); color: var(--cream); text-align: center; }
+    .book h2 { color: var(--cream); }
+    .book .btn-ghost { margin-left: 0.6rem; }
+    address { font-style: normal; margin-top: 2.2rem; font-size: 0.95rem; color: color-mix(in srgb, var(--cream) 85%, transparent); line-height: 2; }
+    address a { color: var(--gold); text-decoration: none; }
+    footer { text-align: center; padding: 2rem 1rem; background: var(--pine-deep); color: color-mix(in srgb, var(--cream) 55%, transparent); border-top: 1px solid color-mix(in srgb, var(--cream) 12%, transparent); font-size: 0.78rem; }
+
+    @media (max-width: 860px) { .strip { grid-template-columns: 1fr; margin-top: 1.5rem; } .two { grid-template-columns: 1fr; } nav a:not(.cta) { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><span class="tplnote"><a href="../">← All templates</a></span> &nbsp; Template 01 · Walden Classic — family-owned venue in the Georgia mountains</div>
+
+  <header>
+    <div class="head-in">
+      <a class="brand" href="#top">On Walden Pond</a>
+      <nav>
+        <a href="#venue">The Venue</a>
+        <a href="#space">The Space</a>
+        <a href="#gallery">Gallery</a>
+        <a class="cta" href="#book">Check Your Date</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top" style="padding:0">
+    <div class="hero-inner">
+      <p class="eyebrow">Calhoun, Georgia · An Hour from Atlanta</p>
+      <h1>On Walden&nbsp;Pond</h1>
+      <p class="tagline">Weddings &amp; celebrations, held quietly by the water.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#book">Check Your Date</a>
+        <a class="btn btn-ghost" href="#venue">Schedule a Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="strip">
+      <div>A private pond &amp; lantern bridge</div>
+      <div>One celebration at a time</div>
+      <div>Family owned &amp; operated</div>
+    </div>
+  </div>
+
+  <section id="venue">
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">The Venue</p>
+        <h2>A private setting, an hour from Atlanta</h2>
+        <p class="lede">On Walden Pond is a family-run wedding and event venue on the quiet edge of Calhoun, Georgia — pines, still water, and a lighted bridge over the pond, kept simple so your day can be the focus.</p>
+        <p class="muted" style="margin-top:1rem">We host the whole arc of a celebration: ceremonies on the bridge, portraits on the dock, long dinners under the oaks, and an evening that ends around the fire. We take the time to know the families we work with, because a celebration should feel like it belongs to you.</p>
+      </div>
+      <img src="../../images/portraits/bride-dock.jpg" alt="Bride on the dock above the pond" loading="lazy">
+    </div>
+  </section>
+
+  <section class="alt" id="space">
+    <div class="wrap">
+      <p class="eyebrow">The Space</p>
+      <h2>Room for the whole day</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The lantern bridge to the lighted gazebo" loading="lazy">
+          <div class="b"><h3>The Ceremony Bridge</h3><p>A lantern-lined footbridge to a lighted gazebo on the water — vows at golden hour, fountain glowing behind you.</p></div>
+        </article>
+        <article class="card">
+          <img src="../../images/venue/pond-dock.jpg" alt="Weathered dock reaching into the still pond" loading="lazy">
+          <div class="b"><h3>The Pond &amp; Dock</h3><p>Weathered docks and open water for the portraits everyone actually keeps — and a quiet bank for an intimate ceremony.</p></div>
+        </article>
+        <article class="card">
+          <img src="../../images/venue/firepit-grove.jpg" alt="Stone fire pit and benches beside the cabin at dusk" loading="lazy">
+          <div class="b"><h3>The Fire Pit Grove</h3><p>A stone fire pit and benches under old oaks beside the cabin — where the evening winds down.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner">
+    <div class="wrap">
+      <blockquote>“We got married on the bridge as the lanterns came on. It is the only photo we frame in our living room.”</blockquote>
+      <cite>Sample testimonial — replace with a real one</cite>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <p class="eyebrow">Gallery</p>
+      <h2>A look around the property</h2>
+      <div class="gallery">
+        <img src="../../images/venue/pond-fountain.jpg" alt="Fountain on the pond" loading="lazy">
+        <img src="../../images/ceremonies/pavilion-first-kiss.jpg" alt="First kiss in the pavilion" loading="lazy">
+        <img src="../../images/venue/gazebo-fountain-view.jpg" alt="The fountain from the gazebo" loading="lazy">
+        <img src="../../images/reception/banquet-table.jpg" alt="Long dinner table dressed with greenery" loading="lazy">
+        <img src="../../images/ceremonies/tunnel-cheers.jpg" alt="Guests cheering the newlyweds" loading="lazy">
+        <img src="../../images/reception/fireplace-gathering.jpg" alt="Evening by the stone fireplace" loading="lazy">
+        <img src="../../images/venue/pond-bench.jpg" alt="A bench in the shade by the water" loading="lazy">
+        <img src="../../images/portraits/getting-ready.jpg" alt="Getting ready by the window" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap">
+      <p class="eyebrow">Bookings &amp; Tours</p>
+      <h2>Check your date</h2>
+      <p class="lede" style="max-width:34rem;margin:0 auto;color:color-mix(in srgb, var(--cream) 85%, transparent)">Call or write and tell us your date and the shape of your day — we'll answer within two business days.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="mailto:onwaldenpondga@gmail.com">Email Us</a>
+        <a class="btn btn-ghost" href="tel:+17706537007">Call (770) 653-7007</a>
+      </div>
+      <address>
+        On Walden Pond · 565 Owens Gin Road NE, Calhoun, GA 30701<br>
+        <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a>
+      </address>
+    </div>
+  </section>
+
+  <footer>© 2026 On Walden Pond · Template 01 — Walden Classic · <a href="../" style="color:var(--gold);text-decoration:none">back to all templates</a></footer>
+</body>
+</html>

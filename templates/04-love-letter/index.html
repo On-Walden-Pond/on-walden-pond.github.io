@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 04 — Love Letter | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 04: Love Letter, soft and romantic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --blush: #f3e4df; --ivory: #fbf7f1; --rose: #b97f74; --rose-deep: #96604f; --ink: #58473f; --soft: #8d7a70; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Cormorant Garamond", Georgia, serif; background: var(--ivory); color: var(--ink); line-height: 1.85; font-size: 1.12rem; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: 62rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); text-align: center; }
+    .kicker { font-family: "Italiana", serif; letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.78rem; color: var(--rose); }
+    h1, h2 { font-family: "Italiana", serif; font-weight: 400; color: var(--rose-deep); }
+    h1 { font-size: clamp(2.8rem, 8vw, 5rem); line-height: 1.08; letter-spacing: 0.02em; margin: 1rem 0; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: 0.02em; margin-bottom: 1rem; }
+    .divider { color: var(--rose); font-size: 1.2rem; margin: 1.6rem 0; letter-spacing: 0.6em; }
+
+    .hero { padding: clamp(3rem, 8vw, 6rem) 0 0; }
+    .hero-img { margin-top: 2.8rem; }
+    .hero-img img { width: min(56rem, 92%); margin: 0 auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 999px 999px 6px 6px; box-shadow: 0 30px 60px -30px rgba(150,96,79,0.35); }
+    .hero::before { content: ""; display: block; }
+
+    nav { display: flex; justify-content: center; gap: 2.2rem; padding: 1.4rem 0 0; flex-wrap: wrap; }
+    nav a { font-family: "Italiana", serif; letter-spacing: 0.24em; text-transform: uppercase; font-size: 0.72rem; color: var(--soft); text-decoration: none; }
+    nav a:hover { color: var(--rose-deep); }
+
+    section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
+    .letter { background: var(--blush); }
+    .letter p.lede { font-style: italic; font-size: clamp(1.25rem, 2.6vw, 1.6rem); max-width: 34rem; margin: 0 auto; color: var(--ink); }
+
+    .arches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-top: 2.4rem; }
+    .arches figure img { aspect-ratio: 3/4.2; object-fit: cover; border-radius: 999px 999px 4px 4px; border: 6px solid #fff; box-shadow: 0 18px 36px -18px rgba(150,96,79,0.4); }
+    .arches figcaption { font-family: "Italiana", serif; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; color: var(--rose-deep); margin-top: 1rem; }
+    .arches figcaption small { display: block; font-family: "Cormorant Garamond", serif; text-transform: none; letter-spacing: 0; font-style: italic; font-size: 0.98rem; color: var(--soft); margin-top: 0.3rem; }
+
+    .moments { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2.2rem; }
+    .moments img { aspect-ratio: 1; object-fit: cover; border-radius: 999px; }
+
+    .invite .btn { display: inline-block; margin: 0.4rem 0.5rem; padding: 0.95rem 2.4rem; font-family: "Italiana", serif; letter-spacing: 0.26em; text-transform: uppercase; font-size: 0.76rem; text-decoration: none; border-radius: 999px; }
+    .btn-solid { background: var(--rose); color: #fff; }
+    .btn-solid:hover { background: var(--rose-deep); }
+    .btn-line { border: 1px solid var(--rose); color: var(--rose-deep); }
+    .btn-line:hover { background: var(--blush); }
+
+    address { font-style: italic; color: var(--soft); margin-top: 1.8rem; font-size: 1.05rem; }
+    address a { color: var(--rose-deep); text-decoration: none; }
+    footer { padding: 2.4rem 1rem; text-align: center; font-style: italic; color: var(--soft); font-size: 0.95rem; }
+    footer a { color: var(--rose-deep); }
+    @media (max-width: 780px) { .arches { grid-template-columns: 1fr; } .moments { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="../">Templates</a>
+      <a href="#venue">The Venue</a>
+      <a href="#corner">Our Corner</a>
+      <a href="#book">Reserve</a>
+    </nav>
+    <header class="hero" id="top">
+      <p class="kicker">For the two of you</p>
+      <h1>A pond,<br>a lantern bridge,<br>a life together.</h1>
+      <p class="italic" style="font-style:italic;color:var(--soft)">On Walden Pond · Calhoun, Georgia</p>
+      <div class="hero-img">
+        <img src="../../images/hero/hero-bridge-dusk.jpg" alt="The lantern bridge glowing at dusk">
+      </div>
+    </header>
+  </div>
+
+  <section class="letter">
+    <div class="wrap">
+      <p class="kicker">You are warmly invited</p>
+      <div class="divider">❦</div>
+      <p class="lede">“We got married on the bridge as the lanterns came on — it is the only photo we frame in our living room.”</p>
+      <p style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;font-family:Italiana,serif;color:var(--soft);margin-top:1rem">A sample note from a family who married here</p>
+    </div>
+  </section>
+
+  <section id="venue">
+    <div class="wrap">
+      <p class="kicker">The Venue</p>
+      <h2>Kept by the family that owns it</h2>
+      <p style="max-width:34rem;margin:0 auto;color:var(--soft)">A family-run venue on the quiet edge of Calhoun — an hour from Atlanta, a world away from it. One celebration at a time, so the day belongs entirely to you.</p>
+      <div class="arches" id="corner">
+        <figure>
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The ceremony bridge in daylight" loading="lazy">
+          <figcaption>The Ceremony Bridge<small>vows with the fountain behind you</small></figcaption>
+        </figure>
+        <figure>
+          <img src="../../images/portraits/bride-dock.jpg" alt="The bride on the dock" loading="lazy">
+          <figcaption>The Pond &amp; Dock<small>the portraits everyone keeps</small></figcaption>
+        </figure>
+        <figure>
+          <img src="../../images/venue/firepit-grove.jpg" alt="The fire pit at dusk" loading="lazy">
+          <figcaption>The Fire Pit Grove<small>where the evening stays warm</small></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="letter">
+    <div class="wrap">
+      <p class="kicker">Little Moments</p>
+      <h2>For all of it —</h2>
+      <p style="max-width:32rem;margin:0 auto;color:var(--soft)">Weddings and renewals, engagements and anniversaries, showers and birthdays worth crossing the water for.</p>
+      <div class="moments">
+        <img src="../../images/ceremonies/pavilion-first-kiss.jpg" alt="First kiss in the pavilion" loading="lazy">
+        <img src="../../images/reception/banquet-table.jpg" alt="The dressed dinner table" loading="lazy">
+        <img src="../../images/portraits/getting-ready.jpg" alt="Getting ready by the window" loading="lazy">
+        <img src="../../images/ceremonies/tunnel-cheers.jpg" alt="The send-off" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="invite" id="book">
+    <div class="wrap">
+      <p class="kicker">Reserve a Date</p>
+      <h2>Let's set your day</h2>
+      <p style="max-width:30rem;margin:0 auto 1.6rem;color:var(--soft)">Tell us your date and the shape of your day; we'll write back within two days, in real words from a real person.</p>
+      <div>
+        <a class="btn btn-solid" href="mailto:onwaldenpondga@gmail.com">Write to Us</a>
+        <a class="btn btn-line" href="tel:+17706537007">Call (770) 653-7007</a>
+      </div>
+      <address>
+        On Walden Pond · 565 Owens Gin Road NE · Calhoun, GA 30701<br>
+        <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a>
+      </address>
+    </div>
+  </section>
+
+  <footer>With love, the family at Walden Pond · Template 04 — Love Letter · <a href="../">all templates</a></footer>
+</body>
+</html>

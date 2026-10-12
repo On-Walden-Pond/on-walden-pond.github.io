@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose a Direction — 10 Template Designs | On Walden Pond</title>
+  <meta name="description" content="Ten design directions for the On Walden Pond website, all built with the family's real wedding photos. Pick a favorite to develop further.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --pine: #2f4034; --pine-deep: #243128; --cream: #f7f4ec; --paper: #fffdf8; --gold: #b08d57; --ink: #33362f; --muted: #6d7267;
+      --serif: "Cormorant Garamond", Georgia, serif; --sans: "Inter", sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-weight: 300; color: var(--ink); background: var(--paper); line-height: 1.7; }
+    img { display: block; width: 100%; }
+    .wrap { max-width: 76rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+
+    header { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      padding: 0.9rem clamp(1.25rem, 5vw, 3rem); background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid color-mix(in srgb, var(--pine) 10%, transparent); }
+    .brand { font-family: var(--serif); font-size: 1.3rem; color: var(--pine); text-decoration: none; }
+    .back { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .back:hover { color: var(--pine); }
+
+    .intro { background: var(--pine-deep); color: var(--cream); text-align: center; padding: clamp(3rem, 8vw, 5.5rem) 1.5rem; }
+    .eyebrow { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; }
+    .intro p { color: color-mix(in srgb, var(--cream) 78%, transparent); max-width: 40rem; margin: 1rem auto 0; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; padding: clamp(2rem, 6vw, 4rem) 0; }
+    .opt { border: 1px solid color-mix(in srgb, var(--pine) 14%, transparent); border-radius: 6px; overflow: hidden; background: var(--paper); text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .opt:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -18px rgba(36,49,40,0.35); }
+    .shot { position: relative; }
+    .shot img { aspect-ratio: 16/9; object-fit: cover; }
+    .num { position: absolute; top: 0.9rem; left: 0.9rem; background: var(--pine-deep); color: var(--cream); font-size: 0.7rem; letter-spacing: 0.2em; padding: 0.35rem 0.8rem; border-radius: 2px; }
+    .view { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(36,49,40,0.55); opacity: 0; transition: opacity 0.25s; }
+    .view span { color: var(--cream); border: 1px solid var(--cream); padding: 0.7rem 1.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; }
+    .opt:hover .view { opacity: 1; }
+    .body { padding: 1.4rem 1.5rem 1.6rem; flex: 1; }
+    .body h2 { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; color: var(--pine); margin-bottom: 0.4rem; }
+    .body p { font-size: 0.92rem; color: var(--muted); }
+    .tags { margin-top: 0.9rem; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+
+    .mix { text-align: center; padding: 0 1.5rem clamp(2.5rem, 6vw, 4rem); }
+    .mix p { color: var(--muted); max-width: 40rem; margin: 0 auto; }
+    .mix b { color: var(--pine); font-weight: 500; }
+    footer { text-align: center; padding: 2rem 1rem; background: var(--pine-deep); color: color-mix(in srgb, var(--cream) 65%, transparent); font-size: 0.8rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../">On Walden Pond</a>
+    <a class="back" href="../">← Live site</a>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">Choose a Direction</p>
+    <h1>Ten ways this website could look</h1>
+    <p>Every design below uses the family's real photos. Open them, wander around, and tell us which one feels like the place — we'll build the final site from that one. You can also mix (for example: “the photos of #2 with the softness of #4”).</p>
+  </section>
+
+  <div class="wrap">
+    <div class="grid">
+      <a class="opt" href="01-classic/">
+        <div class="shot"><img src="../images/hero/hero-bridge-dusk.jpg" alt="Walden Classic preview" loading="lazy"><span class="num">01</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Walden Classic</h2><p>The current site, refined — calm editorial pine &amp; gold, roomy sections, a testimonial banner, everything easy to read.</p><p class="tags">Elegant · familiar · safe bet</p></div>
+      </a>
+      <a class="opt" href="02-golden-hour/">
+        <div class="shot"><img src="../images/venue/firepit-grove.jpg" alt="Golden Hour preview" loading="lazy"><span class="num">02</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Golden Hour</h2><p>Cinematic and dark. Full-screen photos treated like film stills with numbered captions — the pictures do the talking.</p><p class="tags">Moody · filmic · photo-forward</p></div>
+      </a>
+      <a class="opt" href="03-bare/">
+        <div class="shot"><img src="../images/venue/pond-fountain.jpg" alt="Bare preview" loading="lazy"><span class="num">03</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Bare</h2><p>Quiet minimal grid — huge lowercase headline, hairline rules, monospace labels. Modern-galery calm, zero decoration.</p><p class="tags">Minimal · modern · typographic</p></div>
+      </a>
+      <a class="opt" href="04-love-letter/">
+        <div class="shot"><img src="../images/portraits/bride-dock.jpg" alt="Love Letter preview" loading="lazy"><span class="num">04</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Love Letter</h2><p>Soft blush &amp; ivory, arched photographs, invitation-style wording written “for the two of you.” The most romantic of the ten.</p><p class="tags">Romantic · soft · bridal</p></div>
+      </a>
+      <a class="opt" href="05-evergreen-noir/">
+        <div class="shot"><img src="../images/portraits/bride-lantern-bridge.jpg" alt="Evergreen Noir preview" loading="lazy"><span class="num">05</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Evergreen Noir</h2><p>Black-tie luxury — near-black evergreen, gold hairlines, roman numerals, Bodoni serif. Feels like a candlelit estate.</p><p class="tags">Luxury · dark · formal</p></div>
+      </a>
+      <a class="opt" href="06-cedar-twine/">
+        <div class="shot"><img src="../images/reception/fireplace-gathering.jpg" alt="Cedar and Twine preview" loading="lazy"><span class="num">06</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Cedar &amp; Twine</h2><p>Homespun family warmth — kraft-paper textures, polaroid frames, handwritten notes. Friendly, folksy, welcoming.</p><p class="tags">Rustic · warm · family voice</p></div>
+      </a>
+      <a class="opt" href="07-invitation/">
+        <div class="shot"><img src="../images/venue/gazebo-fountain-view.jpg" alt="The Invitation preview" loading="lazy"><span class="num">07</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>The Invitation</h2><p>The whole page is a letterpress wedding invitation — double borders, centered small caps, “requests the pleasure…”</p><p class="tags">Classic · letterpress · formal</p></div>
+      </a>
+      <a class="opt" href="08-postcards/">
+        <div class="shot"><img src="../images/ceremonies/tunnel-cheers.jpg" alt="Postcards preview" loading="lazy"><span class="num">08</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Postcards</h2><p>A taped-up scrapboard of postcards — “Wish you were here,” handwritten captions, a postmark stamp. Playful and memorable.</p><p class="tags">Playful · handmade · fun</p></div>
+      </a>
+      <a class="opt" href="09-slide/">
+        <div class="shot"><img src="../images/ceremonies/dock-kiss-fountain.jpg" alt="Slide preview" loading="lazy"><span class="num">09</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>Slide</h2><p>Full-screen slideshow of the four best shots, then clean app-like sections and a scrolling event marquee. Very now.</p><p class="tags">Sleek · animated · bold</p></div>
+      </a>
+      <a class="opt" href="10-broadsheet/">
+        <div class="shot"><img src="../images/reception/banquet-table.jpg" alt="The Broadsheet preview" loading="lazy"><span class="num">10</span><span class="view"><span>Open</span></span></div>
+        <div class="body"><h2>The Broadsheet</h2><p>A newspaper feature about the venue — masthead, drop cap, columns, photo captions, a “wanted” booking ad. Unforgettable.</p><p class="tags">Editorial · clever · story</p></div>
+      </a>
+    </div>
+
+    <div class="mix">
+      <p><b>How to choose:</b> none is “correct” — they're just different voices for the same pond. Number us your favorite (#1–#10), or mix freely: colors from one, photos from another, wording from a third.</p>
+    </div>
+  </div>
+
+  <footer>© 2026 On Walden Pond · template previews · <a href="../">live site</a></footer>
+</body>
+</html>

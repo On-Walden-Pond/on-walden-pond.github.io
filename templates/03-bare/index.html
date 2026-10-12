@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 03 — Bare | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 03: Bare, a quiet minimal grid.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #ffffff; --ink: #161616; --dim: #8a8a85; --line: #e3e3de; --green: #2f4034; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Space Grotesk", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-weight: 300; }
+    img { display: block; width: 100%; }
+    .wrap { max-width: 78rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3.5rem); }
+    .mono { font-family: "Space Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--dim); text-transform: uppercase; }
+    a { color: var(--ink); }
+
+    header { border-bottom: 1px solid var(--line); }
+    .head-in { display: flex; justify-content: space-between; align-items: baseline; padding: 1.2rem 0; }
+    .brand { font-weight: 500; text-decoration: none; letter-spacing: -0.01em; }
+    nav { display: flex; gap: 1.4rem; }
+    nav a { font-family: "Space Mono", monospace; font-size: 0.7rem; text-transform: uppercase; text-decoration: none; color: var(--dim); }
+    nav a:hover { color: var(--ink); text-decoration: underline; }
+
+    .hero { padding: clamp(3rem, 9vw, 7rem) 0 2.5rem; }
+    h1 { font-size: clamp(3rem, 10vw, 7.5rem); font-weight: 400; letter-spacing: -0.045em; line-height: 0.98; text-transform: lowercase; }
+    h1 span { color: var(--green); }
+    .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem; }
+
+    .hero-img { border-top: 1px solid var(--line); padding-top: 1.5rem; padding-bottom: clamp(3rem, 8vw, 6rem); }
+    .hero-img img { aspect-ratio: 21/9; object-fit: cover; }
+
+    section { border-top: 1px solid var(--line); padding: clamp(2.5rem, 7vw, 5rem) 0; }
+    .sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; margin-bottom: 2.2rem; }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 400; letter-spacing: -0.02em; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .cell img { aspect-ratio: 4/5; object-fit: cover; }
+    .cell .mono { display: block; margin-top: 0.7rem; }
+    .cell h3 { font-weight: 400; font-size: 1.15rem; margin-top: 0.2rem; letter-spacing: -0.01em; }
+    .cell p { color: var(--dim); font-size: 0.9rem; margin-top: 0.3rem; }
+
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    .facts .big { font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 300; letter-spacing: -0.01em; line-height: 1.5; }
+    ul.list { list-style: none; }
+    ul.list li { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 0.7rem 0; font-size: 0.92rem; }
+    ul.list li span { color: var(--dim); font-family: "Space Mono", monospace; font-size: 0.7rem; }
+
+    figure.big-img { border-top: 1px solid var(--line); padding-top: 1.5rem; }
+    figure.big-img img { aspect-ratio: 16/7; object-fit: cover; }
+
+    .book { border-top: 1px solid var(--line); padding: clamp(3rem, 8vw, 6rem) 0; }
+    .book h2 { font-size: clamp(2rem, 6vw, 4.2rem); letter-spacing: -0.04em; }
+    .links { margin-top: 1.6rem; display: flex; gap: 1.8rem; flex-wrap: wrap; font-family: "Space Mono", monospace; font-size: 0.8rem; }
+    .links a { text-underline-offset: 4px; }
+    footer { border-top: 1px solid var(--line); padding: 1.5rem 0; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 800px) { .grid3, .grid2, .facts { grid-template-columns: 1fr; } .hero-img img { aspect-ratio: 4/3; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="head-in">
+        <a class="brand" href="#top">on walden pond</a>
+        <nav>
+          <a href="../">templates</a>
+          <a href="#place">place</a>
+          <a href="#spaces">spaces</a>
+          <a href="#book">dates</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="top" style="border-top:0">
+      <h1>weddings<br>by still <span>water.</span></h1>
+      <div class="hero-meta">
+        <p class="mono">Calhoun, Georgia</p>
+        <p class="mono">1 hr from Atlanta</p>
+        <p class="mono">Family owned &amp; operated</p>
+        <p class="mono">One event / day</p>
+      </div>
+    </section>
+
+    <div class="hero-img">
+      <img src="../../images/hero/hero-bridge-dusk.jpg" alt="Lantern bridge over the pond at dusk">
+      <p class="mono" style="margin-top:0.7rem">Fig. 01 — the bridge, dusk</p>
+    </div>
+  </div>
+
+  <section id="place">
+    <div class="wrap">
+      <div class="sec-head"><h2>the place</h2><p class="mono">01</p></div>
+      <div class="facts">
+        <p class="big">A private pond, a lantern bridge, a lighted gazebo, weathered docks, and a stone fire pit under old oaks — kept by the family that owns it, booked for one celebration at a time.</p>
+        <ul class="list">
+          <li>Ceremonies <span>bridge · gazebo · pond bank</span></li>
+          <li>Portraits <span>docks · grove · cabin</span></li>
+          <li>Dinners <span>under the oaks · pavilion</span></li>
+          <li>Evenings <span>fire pit grove</span></li>
+          <li>Events <span>weddings · anniversaries · birthdays</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="spaces">
+    <div class="wrap">
+      <div class="sec-head"><h2>spaces</h2><p class="mono">02</p></div>
+      <div class="grid3">
+        <div class="cell">
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The bridge to the gazebo, daytime" loading="lazy">
+          <p class="mono">a. bridge + gazebo</p>
+          <h3>Vows at golden hour</h3>
+          <p>Lanterns line the footbridge; the fountain sits behind you.</p>
+        </div>
+        <div class="cell">
+          <img src="../../images/venue/pond-dock.jpg" alt="Docks on the pond" loading="lazy">
+          <p class="mono">b. pond + docks</p>
+          <h3>The portraits everyone keeps</h3>
+          <p>Open water and weathered wood, morning or last light.</p>
+        </div>
+        <div class="cell">
+          <img src="../../images/venue/firepit-grove.jpg" alt="Fire pit at dusk" loading="lazy">
+          <p class="mono">c. fire pit grove</p>
+          <h3>Where the evening winds down</h3>
+          <p>Stone pit, benches, old oaks, and the cabin's warm windows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>the day</h2><p class="mono">03</p></div>
+      <div class="grid2">
+        <div class="cell">
+          <img src="../../images/ceremonies/pavilion-first-kiss.jpg" alt="First kiss in the pavilion" loading="lazy">
+          <p class="mono">first kiss</p>
+        </div>
+        <div class="cell">
+          <img src="../../images/reception/banquet-table.jpg" alt="Long dinner table with greenery" loading="lazy">
+          <p class="mono">the table</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <figure class="big-img">
+        <img src="../../images/ceremonies/tunnel-cheers.jpg" alt="The send-off through a tunnel of glasses" loading="lazy">
+        <p class="mono" style="margin-top:0.7rem">Fig. 02 — the send-off</p>
+      </figure>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap">
+      <p class="mono">dates 2026 — 2027</p>
+      <h2>write us.</h2>
+      <div class="links">
+        <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a>
+        <a href="tel:+17706537007">(770) 653-7007</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=565+Owens+Gin+Road+NE+Calhoun+GA+30701">565 Owens Gin Road NE, Calhoun</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <p class="mono">© 2026 on walden pond</p>
+    <p class="mono">template 03 — bare · <a href="../" style="color:var(--green)">all templates</a></p>
+  </footer>
+</body>
+</html>

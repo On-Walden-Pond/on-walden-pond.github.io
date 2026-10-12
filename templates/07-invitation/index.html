@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 07 — The Invitation | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 07: The Invitation, letterpress classic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper: #faf5ea; --ink: #3b3a33; --soft: #85816f; --rule: #b0a887; --green: #41503f; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "EB Garamond", Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.9; font-size: 1.15rem; }
+    img { display: block; margin: 0 auto; }
+    .page { max-width: 58rem; margin: 1.2rem auto; border: 1px solid var(--rule); outline: 4px double var(--paper); box-shadow: 0 0 0 1px var(--paper), 0 0 0 3px var(--rule); padding: clamp(1.5rem, 5vw, 3.5rem); text-align: center; }
+    .caps { text-transform: uppercase; letter-spacing: 0.34em; font-size: 0.78rem; }
+    .orn { color: var(--rule); letter-spacing: 0.9em; margin: 1.6rem 0; }
+    .c { color: var(--green); }
+    h1 { font-weight: 500; font-size: clamp(2.2rem, 6.5vw, 4rem); letter-spacing: 0.06em; margin: 0.8rem 0; }
+    h2 { font-weight: 500; font-size: clamp(1.4rem, 3.5vw, 1.9rem); letter-spacing: 0.14em; text-transform: uppercase; margin: 0.6rem 0 1rem; }
+    nav { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    nav a { text-decoration: none; color: var(--soft); }
+    nav a:hover { color: var(--green); }
+    em.script { font-style: italic; color: var(--soft); }
+    section { padding: clamp(2rem, 6vw, 4rem) 0; border-top: 1px solid var(--rule); }
+    p.narrow { max-width: 34rem; margin: 0 auto; }
+    figure { margin: 2.2rem auto; max-width: 40rem; }
+    figure img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border: 1px solid var(--rule); padding: 8px; background: var(--paper); }
+    figcaption { margin-top: 0.9rem; font-style: italic; color: var(--soft); font-size: 0.98rem; }
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; max-width: 46rem; margin: 2.2rem auto; }
+    .duo img { aspect-ratio: 4/5; object-fit: cover; border: 1px solid var(--rule); padding: 6px; }
+    .list { max-width: 32rem; margin: 1.4rem auto 0; }
+    .list p { border-bottom: 1px dotted var(--rule); padding: 0.5rem 0; }
+    .btn { display: inline-block; margin: 0.5rem 0.4rem; padding: 0.9rem 2.2rem; border: 1px solid var(--ink); text-decoration: none; color: var(--ink); text-transform: uppercase; letter-spacing: 0.28em; font-size: 0.72rem; }
+    .btn:hover { background: var(--green); border-color: var(--green); color: var(--paper); }
+    .btn.fill { background: var(--ink); }
+    .btn.fill:hover { background: var(--green); }
+    .reply { font-style: italic; color: var(--soft); margin-top: 1.4rem; }
+    .colophon { border-top: 1px solid var(--rule); padding-top: 1.6rem; font-size: 0.95rem; color: var(--soft); }
+    .colophon a { color: var(--green); }
+    @media (max-width: 640px) { .duo { grid-template-columns: 1fr; } .page { margin: 0.6rem; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="caps">
+      <a href="../">Templates</a>
+      <a href="#particulars">Particulars</a>
+      <a href="#grounds">The Grounds</a>
+      <a href="#rsvp">R.S.V.P.</a>
+    </nav>
+
+    <div class="orn">❦ ❦ ❦</div>
+    <p class="caps">Together with their families</p>
+    <h1>On&nbsp;Walden&nbsp;Pond</h1>
+    <p class="caps">requests the pleasure of your company · <span class="c">Calhoun, Georgia</span></p>
+    <div class="orn">— ✦ —</div>
+    <p class="narrow"><em class="script">A family-owned venue of still water and lantern light, an hour from Atlanta, where weddings and celebrations of every kind are hosted one at a time, and kept by the family who owns them.</em></p>
+    <figure>
+      <img src="../../images/hero/hero-bridge-dusk.jpg" alt="The lantern bridge at dusk">
+      <figcaption>The bridge at twilight, where so many ceremonies have begun.</figcaption>
+    </figure>
+
+    <section id="particulars">
+      <h2>The Particulars</h2>
+      <p class="narrow">Weddings and elopements · Rehearsal dinners · Anniversaries · Birthdays · Showers · Reunions</p>
+      <div class="list caps" style="letter-spacing:0.14em;font-size:0.85rem">
+        <p>Ceremonies <span class="c">— the Bridge &amp; Gazebo</span></p>
+        <p>Portraits <span class="c">— the Docks &amp; Grove</span></p>
+        <p>Suppers <span class="c">— beneath the Oaks</span></p>
+        <p>After-hours <span class="c">— the Fire Pit</span></p>
+      </div>
+    </section>
+
+    <section id="grounds">
+      <h2>The Grounds</h2>
+      <div class="duo">
+        <figure style="margin:0">
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The bridge by day" loading="lazy">
+          <figcaption>The footbridge, in morning light.</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img src="../../images/portraits/bride-dock.jpg" alt="The bride on the dock" loading="lazy">
+          <figcaption>The dock, kept for the portraits.</figcaption>
+        </figure>
+      </div>
+      <p class="narrow">Long tables are set under the oaks; the pavilion fireplace is lit when the evening turns; the fire pit stays open as late as your company wishes to stay.</p>
+    </section>
+
+    <section id="rsvp">
+      <h2>R.S.V.P. for a Date</h2>
+      <p class="narrow">The calendars for two thousand twenty-six and two thousand twenty-seven are open to enquiries. Kindly send your date and the nature of your gathering.</p>
+      <div style="margin-top:1.6rem">
+        <a class="btn fill" href="mailto:onwaldenpondga@gmail.com">Reply by Post (Email)</a>
+        <a class="btn" href="tel:+17706537007">By Telephone</a>
+      </div>
+      <p class="reply">onwaldenpondga@gmail.com · (770) 653-7007</p>
+    </section>
+
+    <div class="colophon">
+      <p class="caps" style="margin-bottom:0.4rem">On Walden Pond · 565 Owens Gin Road NE · Calhoun, GA 30701</p>
+      <p style="font-size:0.85rem">Template 07 — The Invitation · <a href="../">view all ten templates</a></p>
+    </div>
+  </div>
+</body>
+</html>

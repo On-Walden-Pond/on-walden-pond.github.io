@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 08 — Postcards | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 08: Postcards, a playful scrapbook of the property.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@500;700&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper: #ece5d3; --card: #fffdf6; --ink: #2f2a24; --red: #b4472f; --blue: #33566b; --dim: #6f675c; --tape: rgba(238, 214, 148, 0.75); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Karla, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-weight: 300;
+      background-image: radial-gradient(rgba(47,42,36,0.05) 1px, transparent 1.4px); background-size: 22px 22px; }
+    img { display: block; width: 100%; }
+    .wrap { max-width: 74rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+    .hand { font-family: Caveat, cursive; color: var(--red); }
+    h1, h2 { font-family: "Alfa Slab One", serif; font-weight: 400; line-height: 1.05; }
+
+    .top { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
+    .stamp-brand { border: 2px dashed var(--blue); padding: 0.5rem 0.9rem; font-family: "Alfa Slab One", serif; font-size: 0.95rem; color: var(--blue); letter-spacing: 0.06em; transform: rotate(-1deg); text-decoration: none; }
+    nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    nav a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--tape); font-weight: 600; font-size: 0.9rem; }
+    nav a:hover { color: var(--red); }
+
+    .hero { padding: 2.5rem 0 3rem; position: relative; }
+    h1 { font-size: clamp(2.6rem, 8vw, 5.5rem); max-width: 12ch; }
+    h1 mark { background: var(--tape); padding: 0 0.15em; }
+    .hero .sub { margin-top: 1.4rem; font-size: 1.15rem; max-width: 30rem; color: var(--dim); }
+    .postmark { position: absolute; top: 1rem; right: clamp(1.25rem, 5vw, 3rem); border: 3px solid var(--blue); border-radius: 50%; width: 110px; height: 110px; display: grid; place-items: center; text-align: center; color: var(--blue); font-family: "Alfa Slab One", serif; font-size: 0.66rem; letter-spacing: 0.14em; transform: rotate(11deg); opacity: 0.85; }
+
+    .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2.6rem 2rem; padding: 2rem 0 1rem; }
+    .post { position: relative; background: var(--card); padding: 10px 10px 2.4rem; box-shadow: 0 16px 28px -14px rgba(47,42,36,0.45); transform: rotate(var(--r, -2deg)); transition: transform 0.25s; }
+    .post:hover { transform: rotate(0deg) translateY(-6px); }
+    .post::before { content: ""; position: absolute; top: -14px; left: 50%; transform: translateX(-50%) rotate(var(--tr, -3deg)); width: 96px; height: 30px; background: var(--tape); }
+    .post img { aspect-ratio: 4/3; object-fit: cover; }
+    .post .note { position: absolute; bottom: 0.5rem; left: 0; right: 0; text-align: center; font-family: Caveat, cursive; font-weight: 700; font-size: 1.25rem; color: var(--red); }
+
+    section { padding: clamp(2.4rem, 7vw, 4.5rem) 0; }
+    h2 { font-size: clamp(1.6rem, 4.5vw, 2.8rem); margin: 1rem 0 0.4rem; }
+    .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-top: 2.2rem; }
+    .why .note-card { background: var(--card); border: 2px solid var(--ink); padding: 1.6rem; transform: rotate(var(--r, 0.8deg)); }
+    .why h3 { font-family: "Alfa Slab One", serif; font-weight: 400; font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .why p { font-size: 0.92rem; color: var(--dim); }
+    .why .big-emoji { font-size: 1.7rem; }
+
+    .postcard-wide { display: grid; grid-template-columns: 1.4fr 1fr; background: var(--card); border: 2px solid var(--ink); transform: rotate(-0.6deg); box-shadow: 0 18px 32px -16px rgba(47,42,36,0.5); }
+    .postcard-wide img { height: 100%; object-fit: cover; min-height: 300px; }
+    .pc-msg { padding: clamp(1.5rem, 4vw, 2.6rem); }
+    .pc-msg .stamp { float: right; width: 74px; height: 92px; border: 2px dashed var(--blue); color: var(--blue); display: grid; place-items: center; font-family: "Alfa Slab One", serif; font-size: 0.6rem; text-align: center; margin: 0 0 0.8rem 1rem; }
+    .pc-msg p { color: var(--dim); }
+    .pc-msg .sig { font-family: Caveat, cursive; font-weight: 700; font-size: 1.5rem; color: var(--red); margin-top: 1rem; }
+    .lines { margin: 1.2rem 0; border-top: 1.5px solid var(--dim); position: relative; }
+    .lines::after { content: ""; position: absolute; inset: 0.8rem 0 auto 0; border-top: 1.5px solid var(--dim); }
+
+    .book { text-align: center; }
+    .btn { display: inline-block; margin: 0.4rem; padding: 1rem 2.2rem; background: var(--red); color: #fff; font-weight: 600; text-decoration: none; letter-spacing: 0.06em; transform: rotate(-1deg); box-shadow: 3px 3px 0 var(--ink); }
+    .btn:hover { transform: rotate(0); box-shadow: 1px 1px 0 var(--ink); }
+    .btn.alt { background: var(--blue); }
+    address { font-style: normal; margin-top: 2rem; color: var(--dim); font-size: 0.9rem; }
+    address a { color: var(--blue); }
+    footer { text-align: center; padding: 2rem 1rem; color: var(--dim); font-size: 0.8rem; }
+    footer a { color: var(--red); }
+    @media (max-width: 820px) { .why, .postcard-wide { grid-template-columns: 1fr; } .postmark { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="stamp-brand" href="#top">ON WALDEN POND</a>
+      <nav>
+        <a href="../">All templates</a>
+        <a href="#album">The Album</a>
+        <a href="#why">Why Here</a>
+        <a href="#book">Say Yes</a>
+      </nav>
+    </div>
+
+    <header class="hero" id="top">
+      <h1>Wish you were <mark>here.</mark></h1>
+      <p class="sub">A real pond, a real lantern bridge, and a family that runs it all. Pin your favorite days to the board — weddings, docks, long dinners, big fires.</p>
+      <div class="postmark">CALHOUN<br>GEORGIA<br>★ 30701 ★</div>
+      <div class="board" id="album">
+        <figure class="post" style="--r:-2.4deg;--tr:-5deg">
+          <img src="../../images/hero/hero-bridge-dusk.jpg" alt="The bridge at dusk" loading="lazy">
+          <span class="note">the bridge at dusk!</span>
+        </figure>
+        <figure class="post" style="--r:1.8deg;--tr:4deg">
+          <img src="../../images/ceremonies/pavilion-first-kiss.jpg" alt="First kiss in the pavilion" loading="lazy">
+          <span class="note">the first kiss</span>
+        </figure>
+        <figure class="post" style="--r:-1.2deg;--tr:-2deg">
+          <img src="../../images/portraits/bride-dock.jpg" alt="The bride on the dock" loading="lazy">
+          <span class="note">dock portraits</span>
+        </figure>
+        <figure class="post" style="--r:2.2deg;--tr:6deg">
+          <img src="../../images/reception/banquet-table.jpg" alt="The dinner table" loading="lazy">
+          <span class="note">dinner under oaks</span>
+        </figure>
+        <figure class="post" style="--r:1.1deg;--tr:-6deg">
+          <img src="../../images/venue/pond-fountain.jpg" alt="The pond fountain" loading="lazy">
+          <span class="note">morning fountain</span>
+        </figure>
+        <figure class="post" style="--r:-2deg;--tr:3deg">
+          <img src="../../images/ceremonies/tunnel-cheers.jpg" alt="The send-off" loading="lazy">
+          <span class="note">the send-off!!!</span>
+        </figure>
+        <figure class="post" style="--r:1.6deg;--tr:2deg">
+          <img src="../../images/venue/firepit-grove.jpg" alt="The fire pit" loading="lazy">
+          <span class="note">late at the fire</span>
+        </figure>
+        <figure class="post" style="--r:-1.5deg;--tr:-4deg">
+          <img src="../../images/portraits/getting-ready.jpg" alt="Getting ready" loading="lazy">
+          <span class="note">getting ready</span>
+        </figure>
+      </div>
+    </header>
+
+    <section id="why">
+      <p class="hand" style="font-size:1.6rem">three reasons families book this pond —</p>
+      <h2>It's small, private, and ours.</h2>
+      <div class="why">
+        <div class="note-card" style="--r:-1deg">
+          <div class="big-emoji">🏮</div>
+          <h3>The bridge lights up</h3>
+          <p>A lantern footbridge to a gazebo on the water. Vows at golden hour, fountain going. Yes, really.</p>
+        </div>
+        <div class="note-card" style="--r:1.4deg">
+          <div class="big-emoji">🔒</div>
+          <h3>One party a day</h3>
+          <p>The whole property, yours alone. No double-booking, no other crowd, no sharing the dock.</p>
+        </div>
+        <div class="note-card" style="--r:-0.8deg">
+          <div class="big-emoji">👨‍👩‍👧</div>
+          <h3>Run by the family</h3>
+          <p>The people who own the pond are the people who sweep the dock. Weddings, birthdays, anything worth gathering for.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="book">
+      <div class="postcard-wide">
+        <img src="../../images/venue/gazebo-fountain-view.jpg" alt="The fountain seen from the gazebo">
+        <div class="pc-msg" style="text-align:left">
+          <div class="stamp">SAY<br>YES<br>★ 2026</div>
+          <p class="hand" style="font-size:1.5rem">Dear future family,</p>
+          <p>tell us your date and who's coming — we'll light the lanterns and save the day. We answer every note within two days.</p>
+          <div class="lines"></div>
+          <div style="margin-top:2.2rem">
+            <a class="btn" href="mailto:onwaldenpondga@gmail.com">Write to us</a>
+            <a class="btn alt" href="tel:+17706537007">(770) 653-7007</a>
+          </div>
+          <p class="sig">— the Walden Pond family</p>
+          <address>565 Owens Gin Road NE, Calhoun, GA 30701 · <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a></address>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>© 2026 On Walden Pond · Template 08 — Postcards · <a href="../">all templates</a></footer>
+</body>
+</html>

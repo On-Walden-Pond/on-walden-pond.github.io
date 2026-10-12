@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 06 — Cedar &amp; Twine | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 06: Cedar & Twine, warm and homespun.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Caveat:wght@500;600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --kraft: #f2e8d5; --paper: #fffaf0; --barn: #8a4f33; --barn-deep: #6d3b26; --pine: #4c5b40; --ink: #40372c; --dim: #7c7161; --thread: #b98a4e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Karla, sans-serif; background: var(--kraft); color: var(--ink); line-height: 1.8; font-weight: 300;
+      background-image: repeating-linear-gradient(0deg, transparent 0 34px, rgba(138,79,51,0.04) 34px 35px); }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: 70rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; color: var(--barn-deep); }
+    .hand { font-family: Caveat, cursive; color: var(--barn); font-size: 1.35rem; }
+    .badge { display: inline-block; background: var(--pine); color: #f4efe2; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 999px; }
+    .stitch { border: 2px dashed var(--thread); border-radius: 6px; }
+
+    .topbar { text-align: center; padding: 0.6rem 1rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper); background: var(--barn-deep); }
+    .topbar a { color: #f0c88f; text-decoration: none; }
+
+    .head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.2rem 0; flex-wrap: wrap; }
+    .brand { font-family: Fraunces, serif; font-weight: 600; font-size: 1.5rem; color: var(--barn-deep); text-decoration: none; }
+    .brand small { display: block; font-family: Caveat, cursive; font-weight: 500; font-size: 1rem; color: var(--barn); }
+    nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: var(--ink); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 2px dotted var(--thread); padding-bottom: 2px; }
+    nav a:hover { color: var(--barn); }
+
+    .hero { padding: 1.5rem 0 3.5rem; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.08; margin: 1rem 0; }
+    .hero p.big { font-size: 1.1rem; color: var(--dim); }
+    .hero-actions { margin-top: 1.8rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 0.85rem 1.7rem; border-radius: 999px; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .btn-barn { background: var(--barn); color: #fff6ea; box-shadow: 0 4px 0 var(--barn-deep); }
+    .btn-barn:hover { background: var(--barn-deep); }
+    .btn-line { border: 2px solid var(--pine); color: var(--pine); }
+    .btn-line:hover { background: var(--pine); color: #fff; }
+    .polaroid { background: var(--paper); padding: 14px 14px 56px; box-shadow: 0 14px 30px -12px rgba(64,55,44,0.4); transform: rotate(1.6deg); }
+    .polaroid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .polaroid span { display: block; font-family: Caveat, cursive; font-size: 1.3rem; color: var(--ink); text-align: center; margin-top: 12px; }
+
+    section { padding: clamp(2.6rem, 7vw, 5rem) 0; }
+    h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); margin: 0.8rem 0 1rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 2.4rem; }
+    .card { background: var(--paper); padding: 12px 12px 1.4rem; box-shadow: 0 10px 24px -12px rgba(64,55,44,0.35); transform: rotate(var(--tilt, 0deg)); }
+    .card img { aspect-ratio: 4/3; object-fit: cover; }
+    .card h3 { font-size: 1.25rem; margin: 1rem 0.4rem 0.4rem; }
+    .card p { font-size: 0.92rem; color: var(--dim); margin: 0 0.4rem; }
+
+    .recipe { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .recipe .stitch { padding: 2rem; background: var(--paper); }
+    .recipe h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+    ul.check { list-style: none; }
+    ul.check li { padding: 0.45rem 0; border-bottom: 1px dotted var(--thread); }
+    ul.check li::before { content: "✿ "; color: var(--barn); }
+
+    .book { text-align: center; padding-bottom: clamp(3.5rem, 9vw, 6rem); }
+    .book .stitch { background: var(--paper); padding: clamp(2rem, 5vw, 3.5rem); }
+    address { font-style: normal; margin-top: 1.8rem; color: var(--dim); font-size: 0.92rem; line-height: 2; }
+    address a { color: var(--barn); }
+    footer { text-align: center; padding: 1.8rem; font-size: 0.75rem; letter-spacing: 0.14em; color: var(--dim); border-top: 2px dashed var(--thread); }
+    footer a { color: var(--barn); }
+    @media (max-width: 840px) { .hero, .recipe, .cards { grid-template-columns: 1fr; } .polaroid, .card { transform: none; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><a href="../">← pick another template</a> &nbsp;·&nbsp; Cedar &amp; Twine — a homespun family venue in the Georgia mountains</div>
+
+  <div class="wrap">
+    <div class="head">
+      <a class="brand" href="#top">On Walden Pond<small>the family place by the water</small></a>
+      <nav>
+        <a href="#about">Our Place</a>
+        <a href="#spots">Good Spots</a>
+        <a href="#how">How It Works</a>
+        <a href="#book">Save a Date</a>
+      </nav>
+    </div>
+
+    <section class="hero" id="top" style="padding-top:0.5rem">
+      <div>
+        <span class="badge">Weddings · Rehearsals · Birthdays</span>
+        <h1>Come on over. The lanterns are already on.</h1>
+        <p class="big">A family-owned place with a pond, a lighted bridge, and a big fire at the end of the night — an hour up the road from Atlanta, a lifetime away from the noise.</p>
+        <div class="hero-actions">
+          <a class="btn btn-barn" href="#book">Save a Date</a>
+          <a class="btn btn-line" href="#about">Look Around First</a>
+        </div>
+        <p class="hand" style="margin-top:1.4rem">— we host one party at a time, so it's all yours</p>
+      </div>
+      <figure class="polaroid">
+        <img src="../../images/hero/hero-bridge-dusk.jpg" alt="The lantern bridge at dusk">
+        <span>the bridge, just after dark</span>
+      </figure>
+    </section>
+  </div>
+
+  <section id="about" style="background:var(--paper);border-block:2px dashed var(--thread)">
+    <div class="wrap recipe">
+      <div>
+        <span class="badge">Our Place</span>
+        <h2>Owned by the family that runs it</h2>
+        <p style="color:var(--dim)">We're the family who owns the pond — and we're the family who'll be there when you arrive. We light the lanterns, sweep the dock, and stay out of your pictures. Weddings, anniversaries, birthdays, showers, retirements: if it deserves a gathering, it fits here.</p>
+        <p class="hand" style="margin-top:1rem">bring your grandma's folding chairs, we have more</p>
+      </div>
+      <figure class="polaroid" style="--x:0;transform:rotate(-2deg)">
+        <img src="../../images/venue/firepit-grove.jpg" alt="The stone fire pit at dusk">
+        <span>the fire, before anyone arrives</span>
+      </figure>
+    </div>
+  </section>
+
+  <section id="spots">
+    <div class="wrap">
+      <span class="badge">Good Spots</span>
+      <h2>The places folks ask about</h2>
+      <div class="cards">
+        <div class="card" style="--tilt:-1.2deg">
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The ceremony bridge" loading="lazy">
+          <h3>The Bridge</h3>
+          <p>Walk down it, meet at the gazebo, and the fountain goes off behind you. Best around sunset.</p>
+        </div>
+        <div class="card" style="--tilt:1.4deg">
+          <img src="../../images/venue/pond-dock.jpg" alt="The dock" loading="lazy">
+          <h3>The Docks</h3>
+          <p>Where the good photos happen. Morning coffee portraits are a family tradition now.</p>
+        </div>
+        <div class="card" style="--tilt:-0.8deg">
+          <img src="../../images/reception/fireplace-gathering.jpg" alt="Guests by the fireplace" loading="lazy">
+          <h3>The Fireplace</h3>
+          <p>Late night, loud laughter, and the neon humming over the stones. Stay as long as you like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="background:var(--paper);border-block:2px dashed var(--thread)">
+    <div class="wrap recipe">
+      <div class="stitch">
+        <h3>How a day here works</h3>
+        <ul class="check">
+          <li>Call or email with your date — we answer within two days</li>
+          <li>Walk the grounds with us, no pressure, coffee on the porch</li>
+          <li>Book it; we hold the whole property for your day alone</li>
+          <li>We turn the lanterns on for you. Every time.</li>
+        </ul>
+      </div>
+      <figure class="polaroid" style="transform:rotate(1.8deg)">
+        <img src="../../images/reception/banquet-table.jpg" alt="The dinner table" loading="lazy">
+        <span>dinner, under the oaks</span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap">
+      <div class="stitch">
+        <span class="badge">Save a Date</span>
+        <h2>Got a date in mind?</h2>
+        <p style="color:var(--dim);max-width:32rem;margin:0 auto 1.6rem">Tell us who's coming and what you're celebrating. We'll tell you if the day's open, honestly.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a class="btn btn-barn" href="mailto:onwaldenpondga@gmail.com">Write to Us</a>
+          <a class="btn btn-line" href="tel:+17706537007">(770) 653-7007</a>
+        </div>
+        <address>On Walden Pond · 565 Owens Gin Road NE · Calhoun, GA 30701<br><a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a></address>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 On Walden Pond · Template 06 — Cedar &amp; Twine · <a href="../">all templates</a></footer>
+</body>
+</html>

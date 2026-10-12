@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 05 — Evergreen Noir | On Walden Pond</title>
+  <meta name="description" content="On Walden Pond — family-owned wedding venue in Calhoun, Georgia. Template design 05: Evergreen Noir, black-tie and cinematic dark.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    :root { --noir: #0e1512; --noir2: #131c17; --cream: #ece7da; --dim: #8e988d; --gold: #c2a36b; --line: rgba(236,231,218,0.14); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Montserrat, sans-serif; font-weight: 300; background: var(--noir); color: var(--cream); line-height: 1.8; }
+    img { display: block; max-width: 100%; }
+    .frame { border: 1px solid var(--line); margin: clamp(0.6rem, 2vw, 1.4rem); min-height: calc(100vh - 2.8rem); }
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+    .lbl { font-size: 0.66rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); }
+    .num { font-family: "Bodoni Moda", serif; font-style: italic; color: var(--gold); }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem clamp(1.25rem, 4vw, 3rem); border-bottom: 1px solid var(--line); position: sticky; top: 0; background: color-mix(in srgb, var(--noir) 92%, transparent); backdrop-filter: blur(10px); z-index: 10; }
+    .brand { font-family: "Bodoni Moda", serif; font-size: 1.05rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--cream); text-decoration: none; }
+    nav { display: flex; gap: 1.8rem; }
+    nav a { font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dim); text-decoration: none; }
+    nav a:hover { color: var(--gold); }
+
+    .hero { position: relative; min-height: 88vh; display: grid; place-items: center; text-align: center;
+      background: linear-gradient(rgba(14,21,18,0.55), rgba(14,21,18,0.72)), url("../../images/hero/hero-bridge-dusk.jpg") center / cover no-repeat; }
+    h1 { font-family: "Bodoni Moda", serif; font-weight: 400; font-size: clamp(2.6rem, 7vw, 5.2rem); letter-spacing: 0.04em; margin: 1.4rem 0 1rem; }
+    .hero p { color: var(--dim); max-width: 34rem; margin: 0 auto; font-size: 0.95rem; }
+    .orn { color: var(--gold); letter-spacing: 0.8em; margin: 1.6rem 0; font-size: 0.8rem; }
+    .btn { display: inline-block; padding: 1rem 2.4rem; font-size: 0.64rem; letter-spacing: 0.34em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); color: var(--gold); transition: all 0.3s; }
+    .btn:hover { background: var(--gold); color: var(--noir); }
+    .btn + .btn { margin-left: 0.8rem; }
+
+    section { padding: clamp(3.5rem, 9vw, 6.5rem) 0; }
+    h2 { font-family: "Bodoni Moda", serif; font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.6rem); letter-spacing: 0.03em; margin: 0.9rem 0 1.2rem; }
+    .dim { color: var(--dim); }
+
+    .salons { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
+    .salon { border-right: 1px solid var(--line); text-align: center; padding: 2.2rem 1.6rem 2.6rem; }
+    .salon:last-child { border-right: 0; }
+    .salon img { aspect-ratio: 4/5; object-fit: cover; margin-bottom: 1.6rem; filter: saturate(0.92); }
+    .salon h3 { font-family: "Bodoni Moda", serif; font-weight: 400; font-size: 1.2rem; letter-spacing: 0.06em; margin: 0.7rem 0 0.6rem; }
+    .salon p { font-size: 0.85rem; color: var(--dim); }
+
+    .quote { background: var(--noir2); border-block: 1px solid var(--line); text-align: center; }
+    .quote blockquote { font-family: "Bodoni Moda", serif; font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 3vw, 1.9rem); max-width: 40rem; margin: 0 auto; line-height: 1.6; }
+    .quote cite { display: block; margin-top: 1.4rem; font-style: normal; font-size: 0.64rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold); }
+
+    .diptych { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .diptych img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+
+    .book { text-align: center; }
+    address { margin-top: 2.4rem; font-style: normal; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--dim); line-height: 2.2; }
+    address a { color: var(--gold); text-decoration: none; }
+    .end { border-top: 1px solid var(--line); text-align: center; padding: 1.8rem; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dim); }
+    .end a { color: var(--gold); text-decoration: none; }
+    @media (max-width: 820px) { .salons, .diptych { grid-template-columns: 1fr; } .salon { border-right: 0; border-bottom: 1px solid var(--line); } nav a:not(:last-child) { display: none; } }
+  </style>
+</head>
+<body>
+<div class="frame">
+  <div class="nav">
+    <a class="brand" href="#top">On Walden Pond</a>
+    <nav>
+      <a href="../">Templates</a>
+      <a href="#salons">The Rooms of the Grounds</a>
+      <a href="#book">Enquire</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="lbl">Calhoun, Georgia — An Hour from Atlanta</p>
+      <h1>On Walden Pond</h1>
+      <p class="orn">◆ ◆ ◆</p>
+      <p>Black-tie calm in the pine woods: a lantern bridge, a still pond, one celebration a day, and the family that tends it all on hand.</p>
+      <div style="margin-top:2.2rem">
+        <a class="btn" href="#book">Enquire for a Date</a>
+        <a class="btn" href="#salons" style="border-color:var(--line);color:var(--cream)">The Grounds</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="salons">
+    <div class="wrap">
+      <p class="lbl"><span class="num">I.</span> &nbsp;The Rooms of the Grounds</p>
+      <h2 style="text-align:center">Three settings, one evening</h2>
+      <div class="salons" style="margin-top:2.4rem">
+        <div class="salon">
+          <img src="../../images/venue/ceremony-bridge-day.jpg" alt="The ceremony bridge" loading="lazy">
+          <p class="lbl"><span class="num">i.</span> Vows</p>
+          <h3>The Bridge</h3>
+          <p>A lantern-lined footbridge to a lighted gazebo on the water.</p>
+        </div>
+        <div class="salon">
+          <img src="../../images/reception/banquet-table.jpg" alt="The dinner table" loading="lazy">
+          <p class="lbl"><span class="num">ii.</span> Dinner</p>
+          <h3>The Long Table</h3>
+          <p>Supper under the oaks, greenery down the centre, the pavilion warm behind.</p>
+        </div>
+        <div class="salon">
+          <img src="../../images/venue/firepit-grove.jpg" alt="The fire pit grove" loading="lazy">
+          <p class="lbl"><span class="num">iii.</span> Evening</p>
+          <h3>The Grove</h3>
+          <p>A stone fire beneath old oaks, where the night slowly says goodnight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap">
+      <p class="lbl"><span class="num">II.</span> &nbsp;From Our Families</p>
+      <blockquote>“It felt like a private estate from another century — except everyone who ran it treated us like kin.”</blockquote>
+      <cite>Sample testimonial</cite>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="lbl"><span class="num">III.</span> &nbsp;The Portraits</p>
+      <h2 style="text-align:center;margin-bottom:2.2rem">Light on the Water</h2>
+      <div class="diptych">
+        <img src="../../images/portraits/bride-lantern-bridge.jpg" alt="The bride on the lantern bridge" loading="lazy">
+        <img src="../../images/ceremonies/dock-kiss-fountain.jpg" alt="The newlyweds on the dock" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap">
+      <p class="lbl"><span class="num">IV.</span> &nbsp;Enquiries</p>
+      <h2>The Calendar Opens Early</h2>
+      <p class="dim" style="max-width:30rem;margin:0 auto">Dates for 2026 and 2027 are taken by enquiry alone. Write us your date and the shape of your day.</p>
+      <div style="margin-top:2rem">
+        <a class="btn" href="mailto:onwaldenpondga@gmail.com">Write to Us</a>
+        <a class="btn" href="tel:+17706537007" style="border-color:var(--line);color:var(--cream)">(770) 653-7007</a>
+      </div>
+      <address>
+        On Walden Pond · 565 Owens Gin Road NE · Calhoun, Georgia 30701<br>
+        <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a>
+      </address>
+    </div>
+  </section>
+
+  <div class="end">© MMXXVI On Walden Pond · Template 05 — Evergreen Noir · <a href="../">All Templates</a></div>
+</div>
+</body>
+</html>

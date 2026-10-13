@@ -88,9 +88,11 @@
     address a { color: var(--accent); text-decoration: none; }
     .cform { max-width: 34rem; margin: 2.2rem auto 2rem; display: grid; gap: 0.9rem; text-align: left; }
     .cform .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-    .cform input, .cform textarea { width: 100%; background: transparent; border: 1px solid var(--hair); border-radius: 10px; padding: 0.85rem 1rem; color: var(--ink); font-family: inherit; font-size: 0.95rem; font-weight: 300; }
+    .cform input, .cform textarea, .cform select { width: 100%; background: transparent; border: 1px solid var(--hair); border-radius: 10px; padding: 0.85rem 1rem; color: var(--ink); font-family: inherit; font-size: 0.95rem; font-weight: 300; }
     .cform textarea { min-height: 6.5rem; resize: vertical; }
-    .cform input:focus, .cform textarea:focus { outline: none; border-color: var(--accent); }
+    .cform select { cursor: pointer; }
+    .cform select option { background: var(--bg); color: var(--ink); }
+    .cform input:focus, .cform textarea:focus, .cform select:focus { outline: none; border-color: var(--accent); }
     .cform input::placeholder, .cform textarea::placeholder { color: var(--dim); }
     .cform button.btn { font-family: inherit; border: 0; cursor: pointer; margin-top: 0.4rem; justify-self: center; }
     .cform button.btn:disabled { opacity: 0.6; cursor: wait; }
@@ -169,7 +171,7 @@
     <p class="lbl">The Promise of One</p>
     <h2>One celebration a day. The whole property, yours.</h2>
     <p style="color:var(--dim);max-width:34rem;margin:0 auto">Up to 150 guests · Calhoun, Georgia — an hour from Atlanta · owned and hosted by the family who owns it · tours by appointment · elopements &amp; portrait sessions by the hour.</p>
-    <div><a class="btn btn-line" href="mailto:onwaldenpondga@gmail.com?subject=Wedding%20Tour%20Request">Book a Tour</a></div>
+    <div><a class="btn btn-line" href="#book" data-purpose="Wedding tour request">Book a Tour</a></div>
   </section>
 
   <section>
@@ -190,9 +192,13 @@
     <p style="color:var(--dim);max-width:30rem;margin:0 auto">We answer within two business days — same phone, same family, every time.</p>
     <form class="cform" id="cform" novalidate>
       <input type="hidden" name="access_key" value="a7a051ea-915a-4aba-a4f7-f253e2220dc8">
-      <input type="hidden" name="subject" value="New enquiry — on-walden-pond.github.io">
+      <input type="hidden" id="csubj" name="subject" value="New enquiry — on-walden-pond.github.io">
       <input type="hidden" name="to" value="onwaldenpondga@gmail.com,onwaldenpond565@gmail.com">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <select name="purpose" id="cpurpose" aria-label="How can we help?">
+        <option value="General enquiry" selected>Ask us a question</option>
+        <option value="Wedding tour request">Book a tour of the property</option>
+      </select>
       <div class="two">
         <input name="name" type="text" placeholder="Your name" autocomplete="name" required aria-label="Your name">
         <input name="email" type="email" placeholder="Your email" autocomplete="email" required aria-label="Your email">
@@ -205,8 +211,9 @@
     </form>
     <div class="thanks" id="cthanks"><b>Thank you — your message is in.</b><br>We'll answer within two business days, from a real family member.</div>
     <div>
+      <a class="btn btn-line" href="#book" data-purpose="General enquiry">Contact Us</a>
       <a class="btn btn-line" href="tel:+17706537007">(770) 653-7007</a>
-      <a class="btn btn-line" href="mailto:onwaldenpondga@gmail.com?subject=Wedding%20Tour%20Request">Book a Tour</a>
+      <a class="btn btn-line" href="#book" data-purpose="Wedding tour request">Book a Tour</a>
       <a class="btn btn-line" href="https://instagram.com/the_falls_on_walden_pond" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
       <a class="btn btn-line" href="https://www.facebook.com/people/The-Falls-on-Walden-Pond/61592246888182/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 21v-7.4h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.8z"/></svg>Facebook</a>
     </div>
@@ -226,6 +233,9 @@
         document.getElementById('cerr').style.display = 'none';
         var data = {};
         new FormData(f).forEach(function (v, k) { data[k] = v; });
+        document.getElementById('csubj').value = data.purpose === 'Wedding tour request'
+          ? 'Tour request — on-walden-pond.github.io' : 'New enquiry — on-walden-pond.github.io';
+        data.subject = document.getElementById('csubj').value;
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -240,6 +250,12 @@
         }).catch(function () {
           document.getElementById('cerr').style.display = 'block';
           btn.disabled = false; btn.textContent = 'Send Message';
+        });
+      });
+      document.querySelectorAll('[data-purpose]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = document.getElementById('cpurpose');
+          if (s) s.value = b.getAttribute('data-purpose');
         });
       });
     })();

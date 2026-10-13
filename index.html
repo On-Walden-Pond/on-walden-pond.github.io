@@ -84,6 +84,14 @@
     @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     .book { text-align: center; }
+    .faq { max-width: 40rem; margin: 2rem auto 0; text-align: left; }
+    .faq details { border-bottom: 1px solid var(--hair); }
+    .faq summary { list-style: none; cursor: pointer; padding: 1.1rem 2.2rem 1.1rem 0; font-weight: 400; font-size: 1.02rem; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; position: absolute; right: 0.4rem; top: 0.85rem; color: var(--accent); font-weight: 200; font-size: 1.45rem; line-height: 1; }
+    .faq details[open] summary::after { content: '\2013'; }
+    .faq .a { color: var(--dim); font-size: 0.93rem; padding: 0 0 1.2rem; max-width: 36rem; }
+    .faq a { color: var(--accent); text-decoration: none; }
     address { margin-top: 2rem; color: var(--dim); font-style: normal; font-size: 0.85rem; line-height: 2; }
     address a { color: var(--accent); text-decoration: none; }
     .cform { max-width: 34rem; margin: 2.2rem auto 2rem; display: grid; gap: 0.9rem; text-align: left; }
@@ -186,6 +194,46 @@
     <div class="more"><a class="btn btn-line" href="photos.html">See the grounds photo gallery</a></div>
   </section>
 
+  <section class="book rowline" id="faq">
+    <p class="lbl">Good Questions</p>
+    <h2>Answered before you ask.</h2>
+    <div class="faq">
+      <details>
+        <summary>How many guests can the property hold?</summary>
+        <p class="a">Up to <b>150 guests</b> — and the whole property is yours alone. One celebration a day, never shared with another party.</p>
+      </details>
+      <details>
+        <summary>What's included with a wedding?</summary>
+        <p class="a">The entire property: grill, fire pit, bridge, water features, covered pavilion and real bathrooms with hot water — plus the house to get ready in and a golf cart to move things around.</p>
+      </details>
+      <details>
+        <summary>What happens if it rains?</summary>
+        <p class="a">The covered pavilion seats your whole party — bar and fireplace included — so ceremonies and receptions run rain or shine. We'll walk your wet-weather plan together before the day.</p>
+      </details>
+      <details>
+        <summary>Can we get married or shoot portraits without a full wedding?</summary>
+        <p class="a">Yes — <b>elopements and portrait sessions by the hour</b>. Early light on the fountain and the bridge is hard to beat.</p>
+      </details>
+      <details>
+        <summary>How do we see the property in person?</summary>
+        <p class="a">Tours are by appointment — press <a href="#book" data-purpose="Wedding tour request">Book a Tour</a> and suggest a day that works for you; a family member will set the time.</p>
+      </details>
+      <details>
+        <summary>Where exactly are you?</summary>
+        <p class="a">565 Owens Gin Road NE, Calhoun, Georgia — about an hour from Atlanta, far enough that it feels like another world.</p>
+      </details>
+      <details>
+        <summary>Any extra-cost options on the day?</summary>
+        <p class="a">Fishing on the pond is available at extra cost — just tell us when you book. We're adding more options over time.</p>
+      </details>
+      <details>
+        <summary>How fast will we hear back?</summary>
+        <p class="a">Within <b>two business days</b> — from a real family member, not an event company. Same phone, same family, every time.</p>
+      </details>
+    </div>
+    <p style="color:var(--dim);margin-top:1.8rem;font-size:0.92rem">Something else on your mind? <a href="#book" data-purpose="General enquiry" style="color:var(--accent);text-decoration:none">Just ask</a> — we answer everything personally.</p>
+  </section>
+
   <section class="book rowline" id="book">
     <p class="lbl">2026 — 2027</p>
     <h2 style="margin-bottom:0.6rem">Tell us your date.</h2>
@@ -214,6 +262,7 @@
       <a class="btn btn-line" href="#book" data-purpose="General enquiry">Contact Us</a>
       <a class="btn btn-line" href="tel:+17706537007">(770) 653-7007</a>
       <a class="btn btn-line" href="#book" data-purpose="Wedding tour request">Book a Tour</a>
+      <a class="btn btn-line" href="#faq">FAQ</a>
       <a class="btn btn-line" href="https://instagram.com/the_falls_on_walden_pond" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
       <a class="btn btn-line" href="https://www.facebook.com/people/The-Falls-on-Walden-Pond/61592246888182/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 21v-7.4h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.8z"/></svg>Facebook</a>
     </div>

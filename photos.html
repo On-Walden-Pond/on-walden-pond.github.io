@@ -19,23 +19,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root { --ink: #f5f3ee; --dim: rgba(245,243,238,0.65); --accent: #e0b06a; --bg: #101211;
+    :root { --ink: #f5f3ee; --dim: rgba(245,243,238,0.75); --accent: #e0b06a; --bg: #101211;
       --hair: rgba(245,243,238,0.14); --line: rgba(245,243,238,0.4); --bar-g: rgba(16,18,17,0.68); }
-    html[data-theme="light"] { --ink: #1b1d1c; --dim: rgba(27,29,28,0.62); --accent: #8a5e24; --bg: #fcfbf8;
+    html[data-theme="light"] { --ink: #1b1d1c; --dim: rgba(27,29,28,0.74); --accent: #8a5e24; --bg: #fcfbf8;
       --hair: rgba(27,29,28,0.16); --line: rgba(27,29,28,0.38); --bar-g: rgba(252,251,248,0.86); }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: Sora, sans-serif; font-weight: 300; background: var(--bg); color: var(--ink); line-height: 1.75; transition: background-color .45s ease, color .45s ease; }
+    body { font-family: Sora, sans-serif; font-weight: 400; background: var(--bg); color: var(--ink); line-height: 1.75; transition: background-color .45s ease, color .45s ease; }
     img { display: block; max-width: 100%; }
-    .lbl { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--accent); }
+    .lbl { font-size: 0.74rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--accent); }
 
     .bar { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 1.3rem clamp(1.25rem, 4vw, 3rem); background: linear-gradient(var(--bar-g), transparent); }
     .brand { font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
     .bar-right { display: flex; align-items: center; gap: 1.2rem; }
     nav { display: flex; gap: 1.6rem; }
-    nav a { color: var(--ink); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+    nav a { color: var(--ink); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; }
     nav a:hover { color: var(--accent); }
-    .tog { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.9rem; border: 1px solid transparent; border-radius: 999px; background: var(--accent); color: #14130f; font-family: inherit; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: color 0.3s, background-color 0.3s; }
+    .tog { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.9rem; border: 1px solid transparent; border-radius: 999px; background: var(--accent); color: #14130f; font-family: inherit; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: color 0.3s, background-color 0.3s; }
     .tog:hover { background: #f0c17c; }
     .tog svg { width: 13px; height: 13px; }
     html[data-theme="light"] .tog { color: #faf6ec; }
@@ -47,12 +47,12 @@
 
     .album { max-width: 80rem; margin: 0 auto; padding: 2.6rem clamp(1.25rem, 5vw, 3rem) 0.8rem; }
     .album h2 { font-weight: 300; font-size: clamp(1.4rem, 3.4vw, 2rem); margin: 0.5rem 0 0.3rem; }
-    .album .note { color: var(--dim); font-size: 0.92rem; max-width: 44rem; }
+    .album .note { color: var(--dim); font-size: 0.96rem; max-width: 44rem; }
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 1.5rem; }
     .grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; }
     @media (max-width: 820px) { .grid { grid-template-columns: 1fr 1fr; } nav a:not(:last-child) { display: none; } }
 
-    footer { text-align: center; margin-top: 3rem; padding: 1.6rem; font-size: 0.7rem; letter-spacing: 0.16em; color: var(--dim); border-top: 1px solid var(--hair); }
+    footer { text-align: center; margin-top: 3rem; padding: 1.6rem; font-size: 0.76rem; letter-spacing: 0.16em; color: var(--dim); border-top: 1px solid var(--hair); }
     footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>

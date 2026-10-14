@@ -20,9 +20,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600&display=swap" rel="stylesheet">
   <style>
     :root { --ink: #f5f3ee; --dim: rgba(245,243,238,0.65); --accent: #e0b06a; --bg: #101211;
-      --hair: rgba(245,243,238,0.14); --line: rgba(245,243,238,0.4); --bar-g: rgba(16,18,17,0.55); }
-    html[data-theme="light"] { --ink: #1b1d1c; --dim: rgba(27,29,28,0.62); --accent: #96682a; --bg: #f4f1e8;
-      --hair: rgba(27,29,28,0.16); --line: rgba(27,29,28,0.38); --bar-g: rgba(244,241,232,0.8); }
+      --hair: rgba(245,243,238,0.14); --line: rgba(245,243,238,0.4); --bar-g: rgba(16,18,17,0.68); }
+    html[data-theme="light"] { --ink: #1b1d1c; --dim: rgba(27,29,28,0.62); --accent: #8a5e24; --bg: #f4f1e8;
+      --hair: rgba(27,29,28,0.16); --line: rgba(27,29,28,0.38); --bar-g: rgba(244,241,232,0.86); }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: Sora, sans-serif; font-weight: 300; background: var(--bg); color: var(--ink); line-height: 1.75; transition: background-color .45s ease, color .45s ease; }
@@ -33,11 +33,13 @@
     .brand { font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
     .bar-right { display: flex; align-items: center; gap: 1.2rem; }
     nav { display: flex; gap: 1.6rem; }
-    nav a { color: var(--dim); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
-    nav a:hover { color: var(--ink); }
-    .tog { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.9rem; border: 1px solid var(--hair); border-radius: 999px; background: transparent; color: var(--dim); font-family: inherit; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: color 0.3s, border-color 0.3s; }
-    .tog:hover { color: var(--ink); border-color: var(--line); }
+    nav a { color: var(--ink); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+    nav a:hover { color: var(--accent); }
+    .tog { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.9rem; border: 1px solid transparent; border-radius: 999px; background: var(--accent); color: #14130f; font-family: inherit; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: color 0.3s, background-color 0.3s; }
+    .tog:hover { background: #f0c17c; }
     .tog svg { width: 13px; height: 13px; }
+    html[data-theme="light"] .tog { color: #faf6ec; }
+    html[data-theme="light"] .tog:hover { background: #6f4a1a; color: #faf6ec; }
 
     .intro { padding: 9rem clamp(1.25rem, 5vw, 3rem) 1rem; max-width: 60rem; margin: 0 auto; }
     h1 { font-weight: 200; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: 0.7rem 0 1rem; }

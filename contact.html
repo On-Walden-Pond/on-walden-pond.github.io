@@ -57,6 +57,7 @@
     .cform textarea { min-height: 6.5rem; resize: vertical; }
     .cform select { cursor: pointer; }
     .cform select option { background: var(--bg); color: var(--ink); }
+    .cform select.ph { color: var(--dim); }
     .cform input:focus, .cform textarea:focus, .cform select:focus { outline: none; border-color: var(--accent); }
     .cform input::placeholder, .cform textarea::placeholder { color: var(--dim); }
     .cform button.btn { font-family: inherit; border: 0; cursor: pointer; margin-top: 0.4rem; justify-self: center; }
@@ -108,8 +109,36 @@
         <input name="name" type="text" placeholder="Your name" autocomplete="name" required aria-label="Your name">
         <input name="email" type="email" placeholder="Your email" autocomplete="email" required aria-label="Your email">
       </div>
-      <input name="date" type="text" placeholder="Preferred date (optional)" aria-label="Preferred date">
-      <textarea name="message" placeholder="Tell us about your event — guest count, time of day, anything." required aria-label="Message"></textarea>
+      <div class="two">
+        <input name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone">
+        <input name="date" type="text" placeholder="Preferred date (optional)" aria-label="Preferred date">
+      </div>
+      <div class="two">
+        <select name="eventType" data-ph aria-label="Event type">
+          <option value="" selected>Event type (optional)</option>
+          <option>Wedding — ceremony &amp; reception</option>
+          <option>Reception only</option>
+          <option>Ceremony only</option>
+          <option>Elopement or micro wedding</option>
+          <option>Party (birthday, engagement, anniversary)</option>
+          <option>Shower (bridal or baby)</option>
+          <option>Reunion</option>
+          <option>Corporate event</option>
+          <option>Other</option>
+        </select>
+        <input name="guests" type="number" min="0" max="200" placeholder="Guest count (optional)" aria-label="Guest count">
+      </div>
+      <select name="howHeard" data-ph aria-label="How did you hear about us?">
+        <option value="" selected>How did you hear about us?</option>
+        <option>Facebook</option>
+        <option>Instagram</option>
+        <option>Google search</option>
+        <option>A friend or family</option>
+        <option>Wedding planning site (The Knot, WeddingWire)</option>
+        <option>Pinterest</option>
+        <option>Other</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about your event — anything you'd like us to know." required aria-label="Message"></textarea>
       <button class="btn btn-solid" id="csend" type="submit">Send Message</button>
       <p class="formerr" id="cerr">Something went wrong — email us directly at <a href="mailto:onwaldenpondga@gmail.com">onwaldenpondga@gmail.com</a> instead.</p>
       <p class="formnote">Goes straight to the family inbox — no middleman.</p>
@@ -140,8 +169,13 @@
   </script>
   <script>
     (function () {
+      var EXEC = 'https://script.google.com/macros/s/AKfycbyit-Z-T7q2f0CxhbceSGzibw1RkvhDYPCOxO8CSQ-0hw07GvQy7f7gWO5jA1N0UmmN/exec';
       var f = document.getElementById('cform');
       if (!f) return;
+      Array.prototype.forEach.call(f.querySelectorAll('select[data-ph]'), function (s) {
+        var upd = function () { s.classList.toggle('ph', s.value === ''); };
+        s.addEventListener('change', upd); upd();
+      });
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!f.checkValidity()) { f.reportValidity(); return; }
@@ -153,6 +187,15 @@
         document.getElementById('csubj').value = data.purpose === 'Wedding tour request'
           ? 'Tour request — on-walden-pond.github.io' : 'New enquiry — on-walden-pond.github.io';
         data.subject = document.getElementById('csubj').value;
+        fetch(EXEC, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            name: data.name, email: data.email, phone: data.phone || '',
+            purpose: data.purpose, eventType: data.eventType || '', guests: data.guests || '',
+            date: data.date || '', howHeard: data.howHeard || '', message: data.message
+          })
+        }).catch(function () {});
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
